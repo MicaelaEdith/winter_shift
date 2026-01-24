@@ -1,11 +1,14 @@
-[gd_scene load_steps=23 format=3 uid="uid://cfh8mtjwfyvqc"]
+[gd_scene load_steps=27 format=3 uid="uid://cfh8mtjwfyvqc"]
 
 [ext_resource type="Texture2D" uid="uid://budw7td32ikb2" path="res://assets/main.png" id="1_d7u15"]
 [ext_resource type="Script" uid="uid://8gqqa6s0vfaw" path="res://scripts/personaje/personaje.gd" id="2_0kxa1"]
+[ext_resource type="Script" uid="uid://br7a600o2i36j" path="res://scripts/elementos/barra.gd" id="3_68mvh"]
 [ext_resource type="Script" uid="uid://du3dn8kv5frqp" path="res://scripts/btns/btn_musica_fx.gd" id="3_a8p2b"]
+[ext_resource type="Script" uid="uid://bxv4rrh5fvdsu" path="res://scripts/elementos/caldera.gd" id="4_lyxkq"]
 [ext_resource type="Texture2D" uid="uid://cjdh743my2ntu" path="res://assets/botones/iconsmusical.png" id="4_o8odp"]
 [ext_resource type="Texture2D" uid="uid://d15h8k8wtdxmr" path="res://assets/botones/iconssound.png" id="5_68mvh"]
 [ext_resource type="Texture2D" uid="uid://c5lpotslrgs7l" path="res://assets/botones/iconspausebutton.png" id="6_lyxkq"]
+[ext_resource type="Texture2D" uid="uid://cvmbuxg7n5b0m" path="res://assets/personaje/personaje.png" id="7_o8odp"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_0kxa1"]
 size = Vector2(27, 65.75)
@@ -21,6 +24,9 @@ size = Vector2(40.0284, 37.5879)
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_jumxm"]
 size = Vector2(31.2328, 39.978)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_68mvh"]
+size = Vector2(39.7433, 59.8582)
 
 [sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_dg7ii"]
 
@@ -56,7 +62,7 @@ texture = ExtResource("1_d7u15")
 expand_mode = 1
 
 [node name="personaje" type="CharacterBody2D" parent="." node_paths=PackedStringArray("marca_pb", "marca_p1", "marca_p2", "marca_p3", "marca_p4", "luz_pb", "luz_p1", "luz_p2", "luz_p3", "luz_p4")]
-position = Vector2(468, 199)
+position = Vector2(503, 522)
 script = ExtResource("2_0kxa1")
 marca_pb = NodePath("../ascensor/marca_pb")
 marca_p1 = NodePath("../ascensor/marca_1")
@@ -250,6 +256,74 @@ position = Vector2(19.4533, 20.0555)
 scale = Vector2(1.24569, 1)
 shape = SubResource("RectangleShape2D_jumxm")
 
+[node name="caldera1" type="TextureRect" parent="estructura"]
+offset_left = 366.0
+offset_top = 557.0
+offset_right = 406.0
+offset_bottom = 617.0
+scale = Vector2(2.82416, 0.902558)
+texture = ExtResource("7_o8odp")
+
+[node name="barra_azul" type="ColorRect" parent="estructura/caldera1" node_paths=PackedStringArray("barra")]
+layout_mode = 0
+offset_left = 36.1169
+offset_top = 3.32389
+offset_right = 76.1169
+offset_bottom = 43.3239
+scale = Vector2(0.0469824, 1.31442)
+color = Color(0.134143, 0.227822, 0.611236, 1)
+script = ExtResource("3_68mvh")
+barra = NodePath("barra_roja")
+
+[node name="barra_roja" type="ColorRect" parent="estructura/caldera1/barra_azul"]
+layout_mode = 0
+offset_right = 40.0
+offset_bottom = 40.0
+scale = Vector2(0.996604, 1.00099)
+color = Color(0.748273, 0.0346736, 0.215316, 1)
+
+[node name="Area2D" type="Area2D" parent="estructura/caldera1"]
+script = ExtResource("4_lyxkq")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="estructura/caldera1/Area2D"]
+position = Vector2(20.1402, 29.9009)
+scale = Vector2(1, 1)
+shape = SubResource("RectangleShape2D_68mvh")
+
+[node name="caldera2" type="TextureRect" parent="estructura"]
+offset_left = 672.0
+offset_top = 556.0
+offset_right = 712.0
+offset_bottom = 616.0
+scale = Vector2(2.82416, 0.902558)
+texture = ExtResource("7_o8odp")
+
+[node name="barra_azul" type="ColorRect" parent="estructura/caldera2" node_paths=PackedStringArray("barra")]
+layout_mode = 0
+offset_left = 36.1169
+offset_top = 3.32389
+offset_right = 76.1169
+offset_bottom = 43.3239
+scale = Vector2(0.0469824, 1.31442)
+color = Color(0.134143, 0.227822, 0.611236, 1)
+script = ExtResource("3_68mvh")
+barra = NodePath("barra_roja")
+
+[node name="barra_roja" type="ColorRect" parent="estructura/caldera2/barra_azul"]
+layout_mode = 0
+offset_right = 40.0
+offset_bottom = 40.0
+scale = Vector2(0.996604, 1.00099)
+color = Color(0.748273, 0.0346736, 0.215316, 1)
+
+[node name="Area2D" type="Area2D" parent="estructura/caldera2"]
+script = ExtResource("4_lyxkq")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="estructura/caldera2/Area2D"]
+position = Vector2(20.1402, 29.9009)
+scale = Vector2(1, 1)
+shape = SubResource("RectangleShape2D_68mvh")
+
 [node name="botones" type="Node" parent="."]
 
 [node name="btn_musica" type="Button" parent="botones"]
@@ -270,6 +344,7 @@ theme_override_styles/pressed = SubResource("StyleBoxEmpty_s4hgp")
 theme_override_styles/normal_mirrored = SubResource("StyleBoxEmpty_r01y2")
 theme_override_styles/normal = SubResource("StyleBoxEmpty_rd5dn")
 script = ExtResource("3_a8p2b")
+tipo_boton = "musica"
 metadata/_edit_use_anchors_ = true
 
 [node name="TextureRect" type="TextureRect" parent="botones/btn_musica"]
@@ -299,6 +374,7 @@ theme_override_styles/pressed = SubResource("StyleBoxEmpty_s4hgp")
 theme_override_styles/normal_mirrored = SubResource("StyleBoxEmpty_r01y2")
 theme_override_styles/normal = SubResource("StyleBoxEmpty_rd5dn")
 script = ExtResource("3_a8p2b")
+tipo_boton = "efectos"
 metadata/_edit_use_anchors_ = true
 
 [node name="TextureRect" type="TextureRect" parent="botones/btn_fx"]
@@ -345,3 +421,7 @@ metadata/_edit_use_anchors_ = true
 
 [connection signal="body_entered" from="ascensor" to="personaje" method="_on_ascensor_body_entered"]
 [connection signal="body_exited" from="ascensor" to="personaje" method="_on_ascensor_body_exited"]
+[connection signal="body_entered" from="estructura/caldera1/Area2D" to="estructura/caldera1/Area2D" method="_on_body_entered"]
+[connection signal="body_exited" from="estructura/caldera1/Area2D" to="estructura/caldera1/Area2D" method="_on_body_exited"]
+[connection signal="body_entered" from="estructura/caldera2/Area2D" to="estructura/caldera2/Area2D" method="_on_body_entered"]
+[connection signal="body_exited" from="estructura/caldera2/Area2D" to="estructura/caldera2/Area2D" method="_on_body_exited"]

@@ -58,6 +58,7 @@ theme_override_styles/pressed = SubResource("StyleBoxEmpty_6m0pt")
 theme_override_styles/normal_mirrored = SubResource("StyleBoxEmpty_builu")
 theme_override_styles/normal = SubResource("StyleBoxEmpty_20bhr")
 script = ExtResource("2_6cq3m")
+tipo_boton = "musica"
 
 [node name="TextureRect" type="TextureRect" parent="btn_musica"]
 layout_mode = 0
@@ -85,6 +86,7 @@ theme_override_styles/pressed = SubResource("StyleBoxEmpty_6m0pt")
 theme_override_styles/normal_mirrored = SubResource("StyleBoxEmpty_builu")
 theme_override_styles/normal = SubResource("StyleBoxEmpty_20bhr")
 script = ExtResource("2_6cq3m")
+tipo_boton = "efectos"
 
 [node name="TextureRect" type="TextureRect" parent="btn_fx"]
 layout_mode = 0

@@ -17,6 +17,7 @@ extends CharacterBody2D
 
 var esta_en_ascensor := false
 var sumando := false
+var reparando := false
 
 func _ready() -> void:
 	actualizar_luz()
@@ -67,7 +68,6 @@ func subir():
 		await get_tree().create_timer(0.9).timeout
 		if GameManager.piso_actual <= 3:
 			GameManager.piso_actual += 1
-			print("piso actual: ", GameManager.piso_actual)
 		else:
 			return
 	
@@ -80,7 +80,6 @@ func bajar():
 		await get_tree().create_timer(0.9).timeout
 		if GameManager.piso_actual > 0:
 			GameManager.piso_actual -= 1
-			print("piso actual: ", GameManager.piso_actual)
 		else:
 			return
 
@@ -95,7 +94,8 @@ func posicionar_personaje():
 		global_position = marca_p3.global_position
 	elif GameManager.piso_actual == 4:
 		global_position = marca_p4.global_position
-	#SoundManager.reproducir_ding()
+		GameManager.descarga = true
+	SoundManager.reproducir_ding()
 	actualizar_luz()
 
 func actualizar_luz():

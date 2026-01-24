@@ -23,13 +23,14 @@ func _ready() -> void:
 
 func reproducir_musica() -> void:
 	player_musica.stream = musica
+	player_musica.volume_db = -20
 
 	if player_musica.stream.has_method("set_loop"):
 		player_musica.stream.set_loop(true)
 	elif "loop" in player_musica.stream:
 		player_musica.stream.loop = true
 
-	player_musica.play()
+	#3player_musica.play()
 
 
 func detener_musica() -> void:
