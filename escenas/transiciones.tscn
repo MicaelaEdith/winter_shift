@@ -1,0 +1,14 @@
+[gd_scene load_steps=3 format=3 uid="uid://dibhybg6xw8f4"]
+
+[ext_resource type="Texture2D" uid="uid://bebwa01k7ylki" path="res://assets/menu_transiciones/transicion_1.png" id="1_5u6ss"]
+[ext_resource type="Script" uid="uid://vp5vxub66ifx" path="res://scripts/transiciones.gd" id="1_y8i2k"]
+
+[node name="Transiciones" type="Node2D"]
+script = ExtResource("1_y8i2k")
+
+[node name="imagen" type="TextureRect" parent="."]
+offset_right = 40.0
+offset_bottom = 40.0
+scale = Vector2(29.2705, 16.492)
+texture = ExtResource("1_5u6ss")
+expand_mode = 1

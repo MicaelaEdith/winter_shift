@@ -1,0 +1,347 @@
+[gd_scene load_steps=23 format=3 uid="uid://cfh8mtjwfyvqc"]
+
+[ext_resource type="Texture2D" uid="uid://budw7td32ikb2" path="res://assets/main.png" id="1_d7u15"]
+[ext_resource type="Script" uid="uid://8gqqa6s0vfaw" path="res://scripts/personaje/personaje.gd" id="2_0kxa1"]
+[ext_resource type="Script" uid="uid://du3dn8kv5frqp" path="res://scripts/btns/btn_musica_fx.gd" id="3_a8p2b"]
+[ext_resource type="Texture2D" uid="uid://cjdh743my2ntu" path="res://assets/botones/iconsmusical.png" id="4_o8odp"]
+[ext_resource type="Texture2D" uid="uid://d15h8k8wtdxmr" path="res://assets/botones/iconssound.png" id="5_68mvh"]
+[ext_resource type="Texture2D" uid="uid://c5lpotslrgs7l" path="res://assets/botones/iconspausebutton.png" id="6_lyxkq"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_0kxa1"]
+size = Vector2(27, 65.75)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_26pgj"]
+size = Vector2(37.0982, 39.9842)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_d7u15"]
+size = Vector2(290.348, 23.5957)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_dkga6"]
+size = Vector2(40.0284, 37.5879)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_jumxm"]
+size = Vector2(31.2328, 39.978)
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_dg7ii"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_woaio"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_7an46"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_acisx"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_a5wrc"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_ueiap"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_ymkly"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_jwie6"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_s4hgp"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_r01y2"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_rd5dn"]
+
+[node name="main" type="Node2D"]
+
+[node name="fondo" type="TextureRect" parent="."]
+offset_left = -7.0
+offset_top = 21.0
+offset_right = 774.0
+offset_bottom = 189.0
+scale = Vector2(1.50245, 3.96523)
+texture = ExtResource("1_d7u15")
+expand_mode = 1
+
+[node name="personaje" type="CharacterBody2D" parent="." node_paths=PackedStringArray("marca_pb", "marca_p1", "marca_p2", "marca_p3", "marca_p4", "luz_pb", "luz_p1", "luz_p2", "luz_p3", "luz_p4")]
+position = Vector2(468, 199)
+script = ExtResource("2_0kxa1")
+marca_pb = NodePath("../ascensor/marca_pb")
+marca_p1 = NodePath("../ascensor/marca_1")
+marca_p2 = NodePath("../ascensor/marca_2")
+marca_p3 = NodePath("../ascensor/marca_3")
+marca_p4 = NodePath("../ascensor/marca_4")
+luz_pb = NodePath("../ascensor/luz_pb")
+luz_p1 = NodePath("../ascensor/luz_p1")
+luz_p2 = NodePath("../ascensor/luz_p2")
+luz_p3 = NodePath("../ascensor/luz_p3")
+luz_p4 = NodePath("../ascensor/luz_p4")
+
+[node name="ColorRect" type="ColorRect" parent="personaje"]
+offset_right = 40.0
+offset_bottom = 40.0
+scale = Vector2(0.687497, 1.65044)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="personaje"]
+position = Vector2(13.5, 33.125)
+shape = SubResource("RectangleShape2D_0kxa1")
+
+[node name="ascensor" type="Area2D" parent="."]
+position = Vector2(543, 19)
+scale = Vector2(1.54576, 14.7953)
+
+[node name="ColorRect" type="ColorRect" parent="ascensor"]
+offset_right = 40.0
+offset_bottom = 40.0
+scale = Vector2(1.00369, 1.00276)
+color = Color(0.299971, 0.153219, 0.348326, 1)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="ascensor"]
+position = Vector2(19.8926, 20.0522)
+shape = SubResource("RectangleShape2D_26pgj")
+
+[node name="marca_pb" type="Marker2D" parent="ascensor"]
+position = Vector2(20.0549, 35.5518)
+
+[node name="marca_1" type="Marker2D" parent="ascensor"]
+position = Vector2(22.6426, 27.3736)
+
+[node name="marca_2" type="Marker2D" parent="ascensor"]
+position = Vector2(22.6426, 18.6546)
+
+[node name="marca_3" type="Marker2D" parent="ascensor"]
+position = Vector2(21.3487, 10.2059)
+
+[node name="marca_4" type="Marker2D" parent="ascensor"]
+position = Vector2(21.3487, 2.29803)
+
+[node name="luz_pb" type="ColorRect" parent="ascensor"]
+visible = false
+offset_left = 12.9386
+offset_top = 33.3214
+offset_right = 52.9386
+offset_bottom = 73.3214
+scale = Vector2(0.339875, 0.00752528)
+color = Color(0.957549, 0.954283, 0.807241, 1)
+
+[node name="luz_p1" type="ColorRect" parent="ascensor"]
+visible = false
+offset_left = 14.2325
+offset_top = 24.7376
+offset_right = 54.2325
+offset_bottom = 64.7376
+scale = Vector2(0.339875, 0.00752528)
+color = Color(0.957549, 0.954283, 0.807241, 1)
+
+[node name="luz_p2" type="ColorRect" parent="ascensor"]
+visible = false
+offset_left = 14.2325
+offset_top = 16.4917
+offset_right = 54.2325
+offset_bottom = 56.4917
+scale = Vector2(0.339875, 0.00752528)
+color = Color(0.957549, 0.954283, 0.807241, 1)
+
+[node name="luz_p3" type="ColorRect" parent="ascensor"]
+visible = false
+offset_left = 14.2325
+offset_top = 8.44863
+offset_right = 54.2325
+offset_bottom = 48.4486
+scale = Vector2(0.339875, 0.00752528)
+color = Color(0.957549, 0.954283, 0.807241, 1)
+
+[node name="luz_p4" type="ColorRect" parent="ascensor"]
+visible = false
+offset_left = 14.8794
+offset_top = 1.2166
+offset_right = 54.8794
+offset_bottom = 41.2166
+scale = Vector2(0.339875, 0.00752528)
+color = Color(0.957549, 0.954283, 0.807241, 1)
+
+[node name="estructura" type="Node" parent="."]
+
+[node name="suelo" type="StaticBody2D" parent="estructura"]
+position = Vector2(1, 27)
+
+[node name="ColorRect" type="ColorRect" parent="estructura/suelo"]
+offset_left = -12.0
+offset_top = 585.0
+offset_right = 28.0
+offset_bottom = 625.0
+scale = Vector2(29.3283, 1.88728)
+color = Color(1, 1, 1, 0.0588235)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="estructura/suelo"]
+position = Vector2(575.5, 620)
+scale = Vector2(3.99865, 3.0514)
+shape = SubResource("RectangleShape2D_d7u15")
+
+[node name="piso1" type="StaticBody2D" parent="estructura"]
+position = Vector2(330, 482)
+scale = Vector2(12.0331, 0.291519)
+
+[node name="ColorRect" type="ColorRect" parent="estructura/piso1"]
+offset_right = 40.0
+offset_bottom = 40.0
+color = Color(1, 1, 1, 0)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="estructura/piso1"]
+position = Vector2(20.042, 18.9396)
+shape = SubResource("RectangleShape2D_dkga6")
+
+[node name="piso2" type="StaticBody2D" parent="estructura"]
+position = Vector2(330, 359)
+scale = Vector2(12.0331, 0.291519)
+
+[node name="ColorRect" type="ColorRect" parent="estructura/piso2"]
+offset_right = 40.0
+offset_bottom = 40.0
+color = Color(1, 1, 1, 0)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="estructura/piso2"]
+position = Vector2(20.042, 18.9396)
+shape = SubResource("RectangleShape2D_dkga6")
+
+[node name="piso3" type="StaticBody2D" parent="estructura"]
+position = Vector2(331, 234)
+scale = Vector2(12.0331, 0.291519)
+
+[node name="ColorRect" type="ColorRect" parent="estructura/piso3"]
+offset_right = 40.0
+offset_bottom = 40.0
+color = Color(1, 1, 1, 0)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="estructura/piso3"]
+position = Vector2(20.042, 18.9396)
+shape = SubResource("RectangleShape2D_dkga6")
+
+[node name="piso4" type="StaticBody2D" parent="estructura"]
+position = Vector2(331, 110)
+scale = Vector2(12.0331, 0.291519)
+
+[node name="ColorRect" type="ColorRect" parent="estructura/piso4"]
+offset_right = 40.0
+offset_bottom = 40.0
+color = Color(1, 1, 1, 0)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="estructura/piso4"]
+position = Vector2(20.042, 18.9396)
+shape = SubResource("RectangleShape2D_dkga6")
+
+[node name="pared1" type="StaticBody2D" parent="estructura"]
+position = Vector2(332, 14)
+scale = Vector2(0.539505, 15.2765)
+
+[node name="ColorRect" type="ColorRect" parent="estructura/pared1"]
+offset_right = 40.0
+offset_bottom = 40.0
+color = Color(1, 1, 1, 0)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="estructura/pared1"]
+position = Vector2(19.4533, 20.0555)
+scale = Vector2(1.24569, 1)
+shape = SubResource("RectangleShape2D_jumxm")
+
+[node name="pared2" type="StaticBody2D" parent="estructura"]
+position = Vector2(792, 14)
+scale = Vector2(0.539505, 15.2765)
+
+[node name="ColorRect" type="ColorRect" parent="estructura/pared2"]
+offset_right = 40.0
+offset_bottom = 40.0
+color = Color(1, 1, 1, 0)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="estructura/pared2"]
+position = Vector2(19.4533, 20.0555)
+scale = Vector2(1.24569, 1)
+shape = SubResource("RectangleShape2D_jumxm")
+
+[node name="botones" type="Node" parent="."]
+
+[node name="btn_musica" type="Button" parent="botones"]
+offset_left = 1000.0
+offset_top = 18.0
+offset_right = 1008.0
+offset_bottom = 26.0
+scale = Vector2(5.03089, 4.74804)
+theme_override_styles/focus = SubResource("StyleBoxEmpty_dg7ii")
+theme_override_styles/disabled_mirrored = SubResource("StyleBoxEmpty_woaio")
+theme_override_styles/disabled = SubResource("StyleBoxEmpty_7an46")
+theme_override_styles/hover_pressed_mirrored = SubResource("StyleBoxEmpty_acisx")
+theme_override_styles/hover_pressed = SubResource("StyleBoxEmpty_a5wrc")
+theme_override_styles/hover_mirrored = SubResource("StyleBoxEmpty_ueiap")
+theme_override_styles/hover = SubResource("StyleBoxEmpty_ymkly")
+theme_override_styles/pressed_mirrored = SubResource("StyleBoxEmpty_jwie6")
+theme_override_styles/pressed = SubResource("StyleBoxEmpty_s4hgp")
+theme_override_styles/normal_mirrored = SubResource("StyleBoxEmpty_r01y2")
+theme_override_styles/normal = SubResource("StyleBoxEmpty_rd5dn")
+script = ExtResource("3_a8p2b")
+metadata/_edit_use_anchors_ = true
+
+[node name="TextureRect" type="TextureRect" parent="botones/btn_musica"]
+layout_mode = 0
+offset_right = 40.0
+offset_bottom = 40.0
+scale = Vector2(0.19631, 0.203409)
+texture = ExtResource("4_o8odp")
+expand_mode = 1
+metadata/_edit_use_anchors_ = true
+
+[node name="btn_fx" type="Button" parent="botones"]
+offset_left = 1046.0
+offset_top = 14.0
+offset_right = 1054.0
+offset_bottom = 22.0
+scale = Vector2(5.36009, 5.52414)
+theme_override_styles/focus = SubResource("StyleBoxEmpty_dg7ii")
+theme_override_styles/disabled_mirrored = SubResource("StyleBoxEmpty_woaio")
+theme_override_styles/disabled = SubResource("StyleBoxEmpty_7an46")
+theme_override_styles/hover_pressed_mirrored = SubResource("StyleBoxEmpty_acisx")
+theme_override_styles/hover_pressed = SubResource("StyleBoxEmpty_a5wrc")
+theme_override_styles/hover_mirrored = SubResource("StyleBoxEmpty_ueiap")
+theme_override_styles/hover = SubResource("StyleBoxEmpty_ymkly")
+theme_override_styles/pressed_mirrored = SubResource("StyleBoxEmpty_jwie6")
+theme_override_styles/pressed = SubResource("StyleBoxEmpty_s4hgp")
+theme_override_styles/normal_mirrored = SubResource("StyleBoxEmpty_r01y2")
+theme_override_styles/normal = SubResource("StyleBoxEmpty_rd5dn")
+script = ExtResource("3_a8p2b")
+metadata/_edit_use_anchors_ = true
+
+[node name="TextureRect" type="TextureRect" parent="botones/btn_fx"]
+layout_mode = 0
+offset_right = 40.0
+offset_bottom = 40.0
+scale = Vector2(0.19631, 0.203409)
+texture = ExtResource("5_68mvh")
+expand_mode = 1
+
+[node name="btn_pausa" type="Button" parent="botones"]
+offset_left = 1068.0
+offset_top = 21.0
+offset_right = 1076.0
+offset_bottom = 29.0
+scale = Vector2(7.71941, 6.78369)
+theme_override_styles/focus = SubResource("StyleBoxEmpty_dg7ii")
+theme_override_styles/disabled_mirrored = SubResource("StyleBoxEmpty_woaio")
+theme_override_styles/disabled = SubResource("StyleBoxEmpty_7an46")
+theme_override_styles/hover_pressed_mirrored = SubResource("StyleBoxEmpty_acisx")
+theme_override_styles/hover_pressed = SubResource("StyleBoxEmpty_a5wrc")
+theme_override_styles/hover_mirrored = SubResource("StyleBoxEmpty_ueiap")
+theme_override_styles/hover = SubResource("StyleBoxEmpty_ymkly")
+theme_override_styles/pressed_mirrored = SubResource("StyleBoxEmpty_jwie6")
+theme_override_styles/pressed = SubResource("StyleBoxEmpty_s4hgp")
+theme_override_styles/normal_mirrored = SubResource("StyleBoxEmpty_r01y2")
+theme_override_styles/normal = SubResource("StyleBoxEmpty_rd5dn")
+script = ExtResource("3_a8p2b")
+metadata/_edit_use_anchors_ = true
+
+[node name="TextureRect" type="TextureRect" parent="botones/btn_pausa"]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.485788
+anchor_top = 0.0368531
+anchor_right = 0.485788
+anchor_bottom = 0.0368533
+offset_right = 40.0
+offset_bottom = 40.0
+scale = Vector2(0.0998314, 0.117297)
+texture = ExtResource("6_lyxkq")
+expand_mode = 1
+metadata/_edit_use_anchors_ = true
+
+[connection signal="body_entered" from="ascensor" to="personaje" method="_on_ascensor_body_entered"]
+[connection signal="body_exited" from="ascensor" to="personaje" method="_on_ascensor_body_exited"]

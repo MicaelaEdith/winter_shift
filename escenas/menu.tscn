@@ -1,0 +1,111 @@
+[gd_scene load_steps=20 format=3 uid="uid://xbpro4ym7uau"]
+
+[ext_resource type="Script" uid="uid://b6cvwb7kqynf" path="res://scripts/menu.gd" id="1_5t3kx"]
+[ext_resource type="Texture2D" uid="uid://bgbl46rdoujyg" path="res://assets/menu_transiciones/fondo_menu.png" id="1_d7r87"]
+[ext_resource type="Texture2D" uid="uid://cjdh743my2ntu" path="res://assets/botones/iconsmusical.png" id="2_2owot"]
+[ext_resource type="Script" uid="uid://du3dn8kv5frqp" path="res://scripts/btns/btn_musica_fx.gd" id="2_6cq3m"]
+[ext_resource type="Texture2D" uid="uid://d15h8k8wtdxmr" path="res://assets/botones/iconssound.png" id="4_5t3kx"]
+[ext_resource type="Script" uid="uid://napalkll1nn0" path="res://scripts/btns/btn_play.gd" id="6_56ah5"]
+[ext_resource type="PackedScene" uid="uid://dibhybg6xw8f4" path="res://escenas/transiciones.tscn" id="7_xqndx"]
+[ext_resource type="Texture2D" uid="uid://b5spn6oda5n2d" path="res://assets/botones/play-12.png" id="8_yb3qj"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_6cq3m"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_5t3kx"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_56ah5"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_xqndx"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_yb3qj"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_4gv4q"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_8jdmi"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_i5l0x"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_6m0pt"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_builu"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_20bhr"]
+
+[node name="Menu" type="Node2D"]
+script = ExtResource("1_5t3kx")
+
+[node name="TextureRect" type="TextureRect" parent="."]
+offset_right = 1165.0
+offset_bottom = 660.0
+texture = ExtResource("1_d7r87")
+expand_mode = 1
+
+[node name="btn_musica" type="Button" parent="."]
+offset_left = 835.0
+offset_top = 41.0
+offset_right = 843.0
+offset_bottom = 49.0
+scale = Vector2(7.71941, 6.78369)
+theme_override_styles/focus = SubResource("StyleBoxEmpty_6cq3m")
+theme_override_styles/disabled_mirrored = SubResource("StyleBoxEmpty_5t3kx")
+theme_override_styles/disabled = SubResource("StyleBoxEmpty_56ah5")
+theme_override_styles/hover_pressed_mirrored = SubResource("StyleBoxEmpty_xqndx")
+theme_override_styles/hover_pressed = SubResource("StyleBoxEmpty_yb3qj")
+theme_override_styles/hover_mirrored = SubResource("StyleBoxEmpty_4gv4q")
+theme_override_styles/hover = SubResource("StyleBoxEmpty_8jdmi")
+theme_override_styles/pressed_mirrored = SubResource("StyleBoxEmpty_i5l0x")
+theme_override_styles/pressed = SubResource("StyleBoxEmpty_6m0pt")
+theme_override_styles/normal_mirrored = SubResource("StyleBoxEmpty_builu")
+theme_override_styles/normal = SubResource("StyleBoxEmpty_20bhr")
+script = ExtResource("2_6cq3m")
+
+[node name="TextureRect" type="TextureRect" parent="btn_musica"]
+layout_mode = 0
+offset_right = 40.0
+offset_bottom = 40.0
+scale = Vector2(0.19631, 0.203409)
+texture = ExtResource("2_2owot")
+expand_mode = 1
+
+[node name="btn_fx" type="Button" parent="."]
+offset_left = 918.0
+offset_top = 39.0
+offset_right = 926.0
+offset_bottom = 47.0
+scale = Vector2(7.71941, 6.78369)
+theme_override_styles/focus = SubResource("StyleBoxEmpty_6cq3m")
+theme_override_styles/disabled_mirrored = SubResource("StyleBoxEmpty_5t3kx")
+theme_override_styles/disabled = SubResource("StyleBoxEmpty_56ah5")
+theme_override_styles/hover_pressed_mirrored = SubResource("StyleBoxEmpty_xqndx")
+theme_override_styles/hover_pressed = SubResource("StyleBoxEmpty_yb3qj")
+theme_override_styles/hover_mirrored = SubResource("StyleBoxEmpty_4gv4q")
+theme_override_styles/hover = SubResource("StyleBoxEmpty_8jdmi")
+theme_override_styles/pressed_mirrored = SubResource("StyleBoxEmpty_i5l0x")
+theme_override_styles/pressed = SubResource("StyleBoxEmpty_6m0pt")
+theme_override_styles/normal_mirrored = SubResource("StyleBoxEmpty_builu")
+theme_override_styles/normal = SubResource("StyleBoxEmpty_20bhr")
+script = ExtResource("2_6cq3m")
+
+[node name="TextureRect" type="TextureRect" parent="btn_fx"]
+layout_mode = 0
+offset_right = 40.0
+offset_bottom = 40.0
+scale = Vector2(0.19631, 0.203409)
+texture = ExtResource("4_5t3kx")
+expand_mode = 1
+
+[node name="btn_play" type="Button" parent="."]
+offset_right = 8.0
+offset_bottom = 8.0
+script = ExtResource("6_56ah5")
+escena = ExtResource("7_xqndx")
+
+[node name="TextureRect" type="TextureRect" parent="btn_play"]
+layout_mode = 0
+offset_left = 820.0
+offset_top = 510.0
+offset_right = 860.0
+offset_bottom = 550.0
+scale = Vector2(4.02134, 1.86912)
+texture = ExtResource("8_yb3qj")
+expand_mode = 1

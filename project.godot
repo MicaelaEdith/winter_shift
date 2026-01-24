@@ -1,0 +1,29 @@
+; Engine configuration file.
+; It's best edited using the editor UI and not directly,
+; since the parameters that go here are not all obvious.
+;
+; Format:
+;   [section] ; section goes between []
+;   param=value ; assign values to parameters
+
+config_version=5
+
+[application]
+
+config/name="winter_shift"
+run/main_scene="uid://xbpro4ym7uau"
+config/features=PackedStringArray("4.4", "GL Compatibility")
+boot_splash/bg_color=Color(0.0980392, 0.109804, 0.12549, 1)
+boot_splash/image="uid://dddgl7rtsng3w"
+config/icon="res://icon.svg"
+
+[autoload]
+
+GameManager="*res://scripts/managers/GameManager.gd"
+SoundManager="*res://scripts/managers/SoundManager.gd"
+
+[rendering]
+
+renderer/rendering_method="gl_compatibility"
+renderer/rendering_method.mobile="gl_compatibility"
+environment/defaults/default_clear_color=Color(0.0145166, 0.0335924, 0.133123, 1)
