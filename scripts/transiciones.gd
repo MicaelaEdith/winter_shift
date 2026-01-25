@@ -18,7 +18,6 @@ var escenas_destino := [
 var indice_imagen := 0
 var actual_lista := []
 var escena_destino := ""
-var automatico := false
 
 
 func _ready():
@@ -36,17 +35,10 @@ func _ready():
 	if actual_lista.is_empty():
 		_cargar_siguiente_escena()
 		return
-
-
 	imagen.texture = actual_lista[0]
-
-	if automatico:
-		_iniciar_transicion_automatica()
 
 
 func _input(event):
-	if automatico:
-		return
 	if event.is_action_pressed("ui_accept") or (event is InputEventMouseButton and event.pressed):
 		SoundManager.reproducir_click()
 		_mostrar_siguiente()
@@ -63,16 +55,10 @@ func _iniciar_fade_out():
 	fade_rect.set_size(Vector2(8000, 4500))
 	fade_rect.visible = true
 	var tween = create_tween()
-	tween.tween_property(fade_rect, "modulate:a", 1.0, 2.0)
+	tween.tween_property(fade_rect, "modulate:a", 1.0, 1.5)
 	tween.finished.connect(_cargar_siguiente_escena)
 
 
 func _cargar_siguiente_escena():
+	GameManager.juego_iniciado = true
 	get_tree().change_scene_to_file(escena_destino)
-
-func _iniciar_transicion_automatica():
-	var tiempo_por_imagen = 2.5
-	var tween = create_tween()
-	for i in range(1, actual_lista.size()):
-		tween.tween_callback(func(): imagen.texture = actual_lista[i]).set_delay(tiempo_por_imagen * i)
-	tween.tween_callback(_iniciar_fade_out).set_delay(tiempo_por_imagen * actual_lista.size())

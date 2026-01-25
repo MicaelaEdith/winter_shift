@@ -1,14 +1,13 @@
+# Personaje
 extends CharacterBody2D
 
 @export var velocidad := 200.0
 @export var gravedad := 1200.0
-
 @export var marca_pb: Marker2D
 @export var marca_p1: Marker2D
 @export var marca_p2: Marker2D
 @export var marca_p3: Marker2D
 @export var marca_p4: Marker2D
-
 @export var luz_pb: ColorRect
 @export var luz_p1: ColorRect
 @export var luz_p2: ColorRect
@@ -17,11 +16,11 @@ extends CharacterBody2D
 
 var esta_en_ascensor := false
 var sumando := false
-var reparando := false
 
 func _ready() -> void:
 	actualizar_luz()
 
+	
 func _physics_process(delta):
 	var direccion := 0
 	
@@ -50,14 +49,11 @@ func _physics_process(delta):
 			sumando = false
 			posicionar_personaje()
 
-
 func _on_ascensor_body_entered(body: Node2D) -> void:
 	esta_en_ascensor = true
-	print("ascensor")
 	
 func _on_ascensor_body_exited(body: Node2D) -> void:
 	esta_en_ascensor = false
-	print("piso")
 
 func subir():
 	if sumando:
@@ -94,7 +90,6 @@ func posicionar_personaje():
 		global_position = marca_p3.global_position
 	elif GameManager.piso_actual == 4:
 		global_position = marca_p4.global_position
-		GameManager.descarga = true
 	SoundManager.reproducir_ding()
 	actualizar_luz()
 

@@ -3,9 +3,11 @@ extends Node
 var click : AudioStream = preload("res://assets/audio/click.mp3")
 var ding : AudioStream = preload("res://assets/audio/ding.mp3")
 var musica : AudioStream = preload("res://assets/audio/musica.mp3")
+var caldera : AudioStream = preload("res://assets/audio/caldera.mp3")
 
 var player_musica : AudioStreamPlayer
 var player_efectos : AudioStreamPlayer
+var volumen_normal = 0
 
 var estado_musica = true
 var estado_fx = true
@@ -17,9 +19,12 @@ func _ready() -> void:
 	
 	player_efectos = AudioStreamPlayer.new()
 	player_efectos.autoplay = false
+	player_efectos.volume_db = volumen_normal
 	add_child(player_efectos)
 	
+	
 	process_mode = Node.PROCESS_MODE_ALWAYS
+	
 
 func reproducir_musica() -> void:
 	player_musica.stream = musica
@@ -30,19 +35,27 @@ func reproducir_musica() -> void:
 	elif "loop" in player_musica.stream:
 		player_musica.stream.loop = true
 
-	#3player_musica.play()
+	player_musica.play()
 
 
 func detener_musica() -> void:
 	if player_musica.playing:
 		player_musica.stop()
-
+		
 func reproducir_click() -> void:
+	player_efectos.volume_db = volumen_normal
 	if estado_fx:
 		player_efectos.stream = click
 		player_efectos.play()
+
+func reproducir_caldera() -> void:
+	player_efectos.volume_db = -15
+	if estado_fx:
+		player_efectos.stream = caldera
+		player_efectos.play()
 		
 func reproducir_ding() -> void:
+	player_efectos.volume_db = volumen_normal
 	if estado_fx:
 		player_efectos.stream = ding
 		player_efectos.play()

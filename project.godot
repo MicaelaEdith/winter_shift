@@ -26,4 +26,4 @@ GameManager="*res://scripts/managers/GameManager.gd"
 
 renderer/rendering_method="gl_compatibility"
 renderer/rendering_method.mobile="gl_compatibility"
-environment/defaults/default_clear_color=Color(0.0145166, 0.0335924, 0.133123, 1)
+environment/defaults/default_clear_color=Color(0.00649738, 0.0188426, 0.104028, 0.890196)
