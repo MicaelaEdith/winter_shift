@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://8xpj0mwefa6e"
-path="res://.godot/imported/iconsdoor.png-61646bc63a55b8bf97a30b7ae3998722.ctex"
+uid="uid://c8tmcffktcxoe"
+path="res://.godot/imported/game_over.png-2af067d142424dc24da902038e8578d5.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://assets/botones/iconsdoor.png"
-dest_files=["res://.godot/imported/iconsdoor.png-61646bc63a55b8bf97a30b7ae3998722.ctex"]
+source_file="res://assets/fondos/game_over.png"
+dest_files=["res://.godot/imported/game_over.png-2af067d142424dc24da902038e8578d5.ctex"]
 
 [params]
 

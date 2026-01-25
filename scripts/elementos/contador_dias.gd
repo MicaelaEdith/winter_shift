@@ -1,10 +1,15 @@
 extends Label
 
-@export var label_dias: Label
+@export var img_fondo_youwin : ColorRect
+@export var img_youwin : TextureRect
+@export var img_gameover : TextureRect
+@export var label_dias : Label
+@export var btn_playagain : Button
+@export var botones : CanvasGroup
 
-var dias_totales := 92
-var dias_restantes := 92
-@export var segundos_por_dia := 4.6
+var dias_totales := 3
+var dias_restantes := 3 
+@export var segundos_por_dia := 3
 
 func _ready() -> void:
 	actualizar_label()
@@ -24,5 +29,11 @@ func actualizar_label() -> void:
 		label_dias.text = "Days left: %d" % dias_restantes
 
 func ganar_juego() -> void:
-	label_dias.text = "You survived the winter!"
+	GameManager.gana = true
+	GameManager.game_over = true
+	botones.visible = false
+	img_fondo_youwin.visible = true
+	img_youwin.visible = true
+	btn_playagain.visible = true
+	
 	

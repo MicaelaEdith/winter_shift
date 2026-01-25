@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://b5spn6oda5n2d"
-path="res://.godot/imported/play-12.png-45dcae0ddf5711e9bc81dc73b6ec9252.ctex"
+uid="uid://can0dglvjd68"
+path="res://.godot/imported/salir_negro.png-47019367b8fce3becbbf705799854f14.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://assets/botones/play-12.png"
-dest_files=["res://.godot/imported/play-12.png-45dcae0ddf5711e9bc81dc73b6ec9252.ctex"]
+source_file="res://assets/botones/salir_negro.png"
+dest_files=["res://.godot/imported/salir_negro.png-47019367b8fce3becbbf705799854f14.ctex"]
 
 [params]
 

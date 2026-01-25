@@ -1,4 +1,4 @@
-[gd_scene load_steps=31 format=3 uid="uid://cfh8mtjwfyvqc"]
+[gd_scene load_steps=76 format=3 uid="uid://cfh8mtjwfyvqc"]
 
 [ext_resource type="Texture2D" uid="uid://o43ggogtsk0l" path="res://assets/fondo.png" id="1_woaio"]
 [ext_resource type="Script" uid="uid://8gqqa6s0vfaw" path="res://scripts/personaje/personaje.gd" id="2_0kxa1"]
@@ -6,28 +6,215 @@
 [ext_resource type="Script" uid="uid://br7a600o2i36j" path="res://scripts/elementos/barra.gd" id="3_68mvh"]
 [ext_resource type="Script" uid="uid://du3dn8kv5frqp" path="res://scripts/btns/btn_musica_fx.gd" id="3_a8p2b"]
 [ext_resource type="Script" uid="uid://bxv4rrh5fvdsu" path="res://scripts/elementos/caldera.gd" id="4_lyxkq"]
-[ext_resource type="Texture2D" uid="uid://cjdh743my2ntu" path="res://assets/botones/iconsmusical.png" id="4_o8odp"]
-[ext_resource type="Texture2D" uid="uid://d15h8k8wtdxmr" path="res://assets/botones/iconssound.png" id="5_68mvh"]
-[ext_resource type="Texture2D" uid="uid://c5lpotslrgs7l" path="res://assets/botones/iconspausebutton.png" id="6_lyxkq"]
+[ext_resource type="Texture2D" uid="uid://bvs8ty0cg3c0s" path="res://assets/personaje/personaje_camina.png" id="4_ueiap"]
+[ext_resource type="Texture2D" uid="uid://d3ft4bqic2u3p" path="res://assets/personaje/personaje_idle.png" id="5_jwie6"]
+[ext_resource type="Texture2D" uid="uid://ccuscbeidt2r5" path="res://assets/personaje/personaje_idle_arregla.png" id="5_ymkly"]
 [ext_resource type="Texture2D" uid="uid://c8r0vspljj22n" path="res://assets/fondos/bordes.png" id="6_woaio"]
 [ext_resource type="Texture2D" uid="uid://cnwrer6g015nh" path="res://assets/fondos/assets-11.png" id="7_7an46"]
+[ext_resource type="Texture2D" uid="uid://bvxxsa788gabl" path="res://assets/personaje/personaje_arreglando_piso.png" id="7_rd5dn"]
 [ext_resource type="Script" uid="uid://b47dikl68bo46" path="res://scripts/elementos/contador_dias.gd" id="10_dg7ii"]
+[ext_resource type="Texture2D" uid="uid://cev1aqlg1gjfl" path="res://assets/botones/luz.png" id="10_s4hgp"]
 [ext_resource type="Script" uid="uid://b3yu46tc1xjvd" path="res://scripts/btns/btn_pausa.gd" id="11_acisx"]
+[ext_resource type="Texture2D" uid="uid://dwdcus4nt5hm4" path="res://assets/botones/musica_blanco.png" id="12_jwie6"]
+[ext_resource type="FontFile" uid="uid://5kpt3cyuodi0" path="res://assets/font/Freckle_Face/FreckleFace-Regular.ttf" id="13_a5wrc"]
+[ext_resource type="Texture2D" uid="uid://b6v3tvbu4mr2e" path="res://assets/botones/sonido_blanco.png" id="13_s4hgp"]
+[ext_resource type="Texture2D" uid="uid://dwpm1tvnsg1yg" path="res://assets/botones/pausa_blanco.png" id="15_r01y2"]
+[ext_resource type="Texture2D" uid="uid://c8tmcffktcxoe" path="res://assets/fondos/game_over.png" id="20_rd5dn"]
+[ext_resource type="Texture2D" uid="uid://sedv31x57j55" path="res://assets/fondos/you_win.png" id="21_88j14"]
+[ext_resource type="Script" uid="uid://b0us12ytgftup" path="res://scripts/btns/play_again.gd" id="22_3c8yq"]
+[ext_resource type="Texture2D" uid="uid://ds1vsf6ot8ef4" path="res://assets/botones/play_again.png" id="22_f1j2c"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_ymkly"]
+atlas = ExtResource("4_ueiap")
+region = Rect2(0, 540, 240, 540)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_jwie6"]
+atlas = ExtResource("4_ueiap")
+region = Rect2(240, 540, 240, 540)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_s4hgp"]
+atlas = ExtResource("4_ueiap")
+region = Rect2(480, 540, 240, 540)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_r01y2"]
+atlas = ExtResource("4_ueiap")
+region = Rect2(720, 540, 240, 540)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_rd5dn"]
+atlas = ExtResource("4_ueiap")
+region = Rect2(1440, 540, 240, 540)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_88j14"]
+atlas = ExtResource("4_ueiap")
+region = Rect2(1680, 540, 240, 540)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_f1j2c"]
+atlas = ExtResource("5_jwie6")
+region = Rect2(720, 540, 240, 540)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_3c8yq"]
+atlas = ExtResource("5_ymkly")
+region = Rect2(0, 0, 240, 540)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_hrygr"]
+atlas = ExtResource("5_ymkly")
+region = Rect2(240, 0, 240, 540)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_8qufa"]
+atlas = ExtResource("5_ymkly")
+region = Rect2(480, 0, 240, 540)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_1equp"]
+atlas = ExtResource("5_ymkly")
+region = Rect2(720, 0, 240, 540)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_jq2gp"]
+atlas = ExtResource("5_ymkly")
+region = Rect2(960, 0, 240, 540)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_yqr1d"]
+atlas = ExtResource("5_ymkly")
+region = Rect2(1200, 0, 240, 540)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_ltvhs"]
+atlas = ExtResource("5_ymkly")
+region = Rect2(1440, 0, 240, 540)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_v4ejg"]
+atlas = ExtResource("7_rd5dn")
+region = Rect2(0, 0, 240, 540)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_c2nrx"]
+atlas = ExtResource("7_rd5dn")
+region = Rect2(240, 0, 240, 540)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_s7y03"]
+atlas = ExtResource("7_rd5dn")
+region = Rect2(480, 0, 240, 540)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_q5c6p"]
+atlas = ExtResource("7_rd5dn")
+region = Rect2(720, 0, 240, 540)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_6uuce"]
+atlas = ExtResource("7_rd5dn")
+region = Rect2(0, 540, 240, 540)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_m3gi3"]
+atlas = ExtResource("7_rd5dn")
+region = Rect2(240, 540, 240, 540)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_ifhw6"]
+atlas = ExtResource("7_rd5dn")
+region = Rect2(480, 540, 240, 540)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_imu58"]
+atlas = ExtResource("7_rd5dn")
+region = Rect2(720, 540, 240, 540)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_f1j2c"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_ymkly")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_jwie6")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_s4hgp")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_r01y2")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_rd5dn")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_88j14")
+}],
+"loop": true,
+"name": &"correr",
+"speed": 20.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_f1j2c")
+}],
+"loop": true,
+"name": &"idle",
+"speed": 3.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_3c8yq")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_hrygr")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_8qufa")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_1equp")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_jq2gp")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_yqr1d")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_ltvhs")
+}],
+"loop": true,
+"name": &"reparando",
+"speed": 7.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_v4ejg")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_c2nrx")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_s7y03")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_q5c6p")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_6uuce")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_m3gi3")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_ifhw6")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_imu58")
+}],
+"loop": true,
+"name": &"reparando_techo",
+"speed": 8.0
+}]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_0kxa1"]
-size = Vector2(27, 65.75)
+size = Vector2(28.4512, 101.95)
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_d7u15"]
 size = Vector2(290.348, 24.9066)
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_dkga6"]
-size = Vector2(40.0284, 37.5879)
-
-[sub_resource type="RectangleShape2D" id="RectangleShape2D_jumxm"]
-size = Vector2(31.2328, 39.978)
+size = Vector2(38.9527, 48.3484)
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_68mvh"]
 size = Vector2(55.6637, 53.7886)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_jumxm"]
+size = Vector2(31.2328, 39.978)
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_26pgj"]
 size = Vector2(37.0982, 39.9842)
@@ -54,10 +241,42 @@ size = Vector2(37.0982, 39.9842)
 
 [sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_rd5dn"]
 
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_88j14"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_f1j2c"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_3c8yq"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_hrygr"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_8qufa"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_1equp"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_jq2gp"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_s7y03"]
+bg_color = Color(0.6, 0.6, 0.6, 0.32549)
+corner_radius_top_left = 60
+corner_radius_top_right = 60
+corner_radius_bottom_right = 60
+corner_radius_bottom_left = 60
+corner_detail = 20
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_ltvhs"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_v4ejg"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_c2nrx"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_yqr1d"]
+
 [node name="main" type="Node2D"]
 
 [node name="fondo_ciudad" type="TextureRect" parent="."]
-modulate = Color(0.130744, 1.83859e-05, 0.525433, 0.352941)
+visible = false
+modulate = Color(0.239216, 0.239216, 0.239216, 0.419608)
+self_modulate = Color(0.54902, 0.54902, 0.54902, 0.619608)
 offset_left = -467.0
 offset_top = -646.0
 offset_right = -427.0
@@ -76,7 +295,8 @@ texture = ExtResource("2_woaio")
 expand_mode = 1
 
 [node name="personaje" type="CharacterBody2D" parent="." node_paths=PackedStringArray("marca_pb", "marca_p1", "marca_p2", "marca_p3", "marca_p4", "luz_pb", "luz_p1", "luz_p2", "luz_p3", "luz_p4")]
-position = Vector2(503, 522)
+position = Vector2(476, 548)
+scale = Vector2(0.919788, 0.919788)
 script = ExtResource("2_0kxa1")
 marca_pb = NodePath("../ascensor/marca_pb")
 marca_p1 = NodePath("../ascensor/marca_1")
@@ -92,11 +312,20 @@ luz_p4 = NodePath("../ascensor/luz_p4")
 [node name="ColorRect" type="ColorRect" parent="personaje"]
 offset_right = 40.0
 offset_bottom = 40.0
-scale = Vector2(0.687497, 1.65044)
-color = Color(1, 0.427451, 1, 1)
+scale = Vector2(0.869206, 2.08666)
+color = Color(1, 0.427451, 1, 0)
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="personaje/ColorRect"]
+position = Vector2(20.3637, 17.5711)
+scale = Vector2(0.200091, 0.0833488)
+sprite_frames = SubResource("SpriteFrames_f1j2c")
+animation = &"reparando_techo"
+frame = 5
+frame_progress = 0.386321
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="personaje"]
-position = Vector2(13.5, 33.125)
+position = Vector2(18, 40)
+scale = Vector2(0.843549, 0.843549)
 shape = SubResource("RectangleShape2D_0kxa1")
 
 [node name="estructura" type="Node" parent="."]
@@ -155,7 +384,7 @@ offset_bottom = 40.0
 color = Color(1, 1, 1, 0)
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="estructura/piso3"]
-position = Vector2(20.042, 18.9396)
+position = Vector2(19.5885, 35.4996)
 shape = SubResource("RectangleShape2D_dkga6")
 
 [node name="piso4" type="StaticBody2D" parent="estructura"]
@@ -171,6 +400,18 @@ color = Color(1, 1, 1, 0)
 [node name="CollisionShape2D" type="CollisionShape2D" parent="estructura/piso4"]
 position = Vector2(20.042, 18.9396)
 shape = SubResource("RectangleShape2D_dkga6")
+
+[node name="Area2D" type="Area2D" parent="estructura/piso4" node_paths=PackedStringArray("barra", "personaje")]
+position = Vector2(26.05, -268.4)
+scale = Vector2(0.0733084, 5.4856)
+script = ExtResource("4_lyxkq")
+elemento = "techo_2"
+barra = NodePath("../../../caldera1/barra_azul")
+personaje = NodePath("../../../personaje")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="estructura/piso4/Area2D"]
+position = Vector2(25.9513, 26.866)
+shape = SubResource("RectangleShape2D_68mvh")
 
 [node name="pared1" type="StaticBody2D" parent="estructura"]
 position = Vector2(326, 14)
@@ -214,7 +455,7 @@ offset_top = 1.10796
 offset_right = 32.5642
 offset_bottom = 41.108
 rotation = 0.016162
-scale = Vector2(0.0521035, 1.81113)
+scale = Vector2(0.0370141, 1.83467)
 color = Color(0.134143, 0.227822, 0.611236, 1)
 script = ExtResource("3_68mvh")
 barra = NodePath("barra_roja")
@@ -252,7 +493,7 @@ offset_top = 2.21593
 offset_right = 80.72
 offset_bottom = 42.2159
 rotation = -0.0129623
-scale = Vector2(0.0623556, 1.78801)
+scale = Vector2(0.0375502, 1.82457)
 color = Color(0.134143, 0.227822, 0.611236, 1)
 script = ExtResource("3_68mvh")
 velocidad_carga = 3
@@ -318,13 +559,21 @@ position = Vector2(21.3487, 11.4901)
 position = Vector2(21.9957, 2.83874)
 
 [node name="luz_pb" type="ColorRect" parent="ascensor"]
-visible = false
 offset_left = 12.9386
-offset_top = 33.3214
+offset_top = 34.2001
 offset_right = 52.9386
-offset_bottom = 73.3214
+offset_bottom = 74.2001
 scale = Vector2(0.339875, 0.00752528)
-color = Color(0.957549, 0.954283, 0.807241, 1)
+color = Color(0.956863, 0.952941, 0.807843, 0)
+
+[node name="TextureRect" type="TextureRect" parent="ascensor/luz_pb"]
+layout_mode = 0
+offset_left = -17.1309
+offset_top = -80.8355
+offset_right = 273.869
+offset_bottom = 91.1645
+scale = Vector2(0.241839, 1.3953)
+texture = ExtResource("10_s4hgp")
 
 [node name="luz_p1" type="ColorRect" parent="ascensor"]
 visible = false
@@ -333,7 +582,15 @@ offset_top = 24.7376
 offset_right = 54.2325
 offset_bottom = 64.7376
 scale = Vector2(0.339875, 0.00752528)
-color = Color(0.957549, 0.954283, 0.807241, 1)
+color = Color(0.956863, 0.952941, 0.807843, 0)
+
+[node name="TextureRect" type="TextureRect" parent="ascensor/luz_p1"]
+offset_left = -17.1309
+offset_top = -80.8355
+offset_right = 273.869
+offset_bottom = 91.1645
+scale = Vector2(0.241839, 1.3953)
+texture = ExtResource("10_s4hgp")
 
 [node name="luz_p2" type="ColorRect" parent="ascensor"]
 visible = false
@@ -342,7 +599,15 @@ offset_top = 16.4917
 offset_right = 54.2325
 offset_bottom = 56.4917
 scale = Vector2(0.339875, 0.00752528)
-color = Color(0.957549, 0.954283, 0.807241, 1)
+color = Color(0.956863, 0.952941, 0.807843, 0)
+
+[node name="TextureRect" type="TextureRect" parent="ascensor/luz_p2"]
+offset_left = -17.1309
+offset_top = -80.8355
+offset_right = 273.869
+offset_bottom = 91.1645
+scale = Vector2(0.241839, 1.3953)
+texture = ExtResource("10_s4hgp")
 
 [node name="luz_p3" type="ColorRect" parent="ascensor"]
 visible = false
@@ -351,7 +616,15 @@ offset_top = 8.44863
 offset_right = 54.2325
 offset_bottom = 48.4486
 scale = Vector2(0.339875, 0.00752528)
-color = Color(0.957549, 0.954283, 0.807241, 1)
+color = Color(0.956863, 0.952941, 0.807843, 0)
+
+[node name="TextureRect" type="TextureRect" parent="ascensor/luz_p3"]
+offset_left = -17.1309
+offset_top = -80.8355
+offset_right = 273.869
+offset_bottom = 91.1645
+scale = Vector2(0.241839, 1.3953)
+texture = ExtResource("10_s4hgp")
 
 [node name="terraza" type="ColorRect" parent="ascensor"]
 offset_left = -1.29387
@@ -369,7 +642,15 @@ offset_top = 1.2166
 offset_right = 54.8794
 offset_bottom = 41.2166
 scale = Vector2(0.339875, 0.00752528)
-color = Color(0.957549, 0.954283, 0.807241, 1)
+color = Color(0.956863, 0.952941, 0.807843, 0)
+
+[node name="TextureRect" type="TextureRect" parent="ascensor/luz_p4"]
+offset_left = -17.1309
+offset_top = -80.8355
+offset_right = 273.869
+offset_bottom = 91.1645
+scale = Vector2(0.241839, 1.3953)
+texture = ExtResource("10_s4hgp")
 
 [node name="TextureRect" type="TextureRect" parent="ascensor"]
 offset_left = -168.849
@@ -390,11 +671,11 @@ color = Color(0.0117647, 0.0431373, 0.313726, 0.929412)
 [node name="botones" type="CanvasGroup" parent="UI"]
 
 [node name="btn_musica" type="Button" parent="UI/botones"]
-offset_left = 1000.0
-offset_top = 18.0
-offset_right = 1008.0
-offset_bottom = 26.0
-scale = Vector2(5.03089, 4.74804)
+offset_left = 978.0
+offset_top = 24.0
+offset_right = 986.0
+offset_bottom = 32.0
+scale = Vector2(5.22041, 5.171)
 theme_override_styles/focus = SubResource("StyleBoxEmpty_dg7ii")
 theme_override_styles/disabled_mirrored = SubResource("StyleBoxEmpty_woaio")
 theme_override_styles/disabled = SubResource("StyleBoxEmpty_7an46")
@@ -411,20 +692,25 @@ tipo_boton = "musica"
 metadata/_edit_use_anchors_ = true
 
 [node name="TextureRect" type="TextureRect" parent="UI/botones/btn_musica"]
-layout_mode = 0
+layout_mode = 1
+anchors_preset = -1
+anchor_left = -0.0841386
+anchor_top = -0.0535769
+anchor_right = -0.0841384
+anchor_bottom = -0.0535769
 offset_right = 40.0
 offset_bottom = 40.0
-scale = Vector2(0.19631, 0.203409)
-texture = ExtResource("4_o8odp")
+scale = Vector2(0.25941, 0.241548)
+texture = ExtResource("12_jwie6")
 expand_mode = 1
 metadata/_edit_use_anchors_ = true
 
 [node name="btn_fx" type="Button" parent="UI/botones"]
-offset_left = 1046.0
-offset_top = 14.0
-offset_right = 1054.0
-offset_bottom = 22.0
-scale = Vector2(5.36009, 5.52414)
+offset_left = 1036.0
+offset_top = 25.0
+offset_right = 1044.0
+offset_bottom = 33.0
+scale = Vector2(4.95366, 5.03176)
 theme_override_styles/focus = SubResource("StyleBoxEmpty_dg7ii")
 theme_override_styles/disabled_mirrored = SubResource("StyleBoxEmpty_woaio")
 theme_override_styles/disabled = SubResource("StyleBoxEmpty_7an46")
@@ -445,15 +731,15 @@ layout_mode = 0
 offset_right = 40.0
 offset_bottom = 40.0
 scale = Vector2(0.19631, 0.203409)
-texture = ExtResource("5_68mvh")
+texture = ExtResource("13_s4hgp")
 expand_mode = 1
 
 [node name="btn_pausa" type="Button" parent="UI/botones"]
-offset_left = 1068.0
-offset_top = 21.0
-offset_right = 1076.0
-offset_bottom = 29.0
-scale = Vector2(7.71941, 6.78369)
+offset_left = 1079.0
+offset_top = 25.0
+offset_right = 1087.0
+offset_bottom = 33.0
+scale = Vector2(6.28915, 5.4289)
 theme_override_styles/focus = SubResource("StyleBoxEmpty_dg7ii")
 theme_override_styles/disabled_mirrored = SubResource("StyleBoxEmpty_woaio")
 theme_override_styles/disabled = SubResource("StyleBoxEmpty_7an46")
@@ -464,33 +750,101 @@ theme_override_styles/hover = SubResource("StyleBoxEmpty_ymkly")
 theme_override_styles/pressed_mirrored = SubResource("StyleBoxEmpty_jwie6")
 theme_override_styles/pressed = SubResource("StyleBoxEmpty_s4hgp")
 theme_override_styles/normal_mirrored = SubResource("StyleBoxEmpty_r01y2")
-theme_override_styles/normal = SubResource("StyleBoxEmpty_rd5dn")
+theme_override_styles/normal = SubResource("StyleBoxEmpty_88j14")
 script = ExtResource("11_acisx")
 metadata/_edit_use_anchors_ = true
 
 [node name="TextureRect" type="TextureRect" parent="UI/botones/btn_pausa"]
 layout_mode = 1
 anchors_preset = -1
-anchor_left = 0.485788
-anchor_top = 0.0368531
-anchor_right = 0.485788
-anchor_bottom = 0.0368533
+anchor_left = -0.134701
+anchor_top = -0.0896864
+anchor_right = -0.134701
+anchor_bottom = -0.0896864
 offset_right = 40.0
 offset_bottom = 40.0
-scale = Vector2(0.0998314, 0.117297)
-texture = ExtResource("6_lyxkq")
+scale = Vector2(0.274731, 0.23917)
+texture = ExtResource("15_r01y2")
 expand_mode = 1
 metadata/_edit_use_anchors_ = true
 
-[node name="contador_dias" type="Label" parent="UI" node_paths=PackedStringArray("label_dias")]
-offset_left = 14.0
-offset_top = 9.0
-offset_right = 125.0
-offset_bottom = 32.0
+[node name="contador_dias" type="Label" parent="UI" node_paths=PackedStringArray("img_fondo_youwin", "img_youwin", "img_gameover", "label_dias", "btn_playagain", "botones")]
+offset_left = 37.0
+offset_top = 31.0
+offset_right = 199.0
+offset_bottom = 64.0
+theme_override_fonts/font = ExtResource("13_a5wrc")
+theme_override_font_sizes/font_size = 26
 text = "Dias restantes"
 script = ExtResource("10_dg7ii")
+img_fondo_youwin = NodePath("../fondo_youwin")
+img_youwin = NodePath("../you_win")
+img_gameover = NodePath("../game_over")
 label_dias = NodePath(".")
+btn_playagain = NodePath("../play_again")
+botones = NodePath("../botones")
 
+[node name="game_over" type="TextureRect" parent="UI"]
+visible = false
+offset_left = -31.0
+offset_top = -7.0
+offset_right = 1889.0
+offset_bottom = 1073.0
+scale = Vector2(0.622392, 0.656896)
+texture = ExtResource("20_rd5dn")
+expand_mode = 1
+
+[node name="fondo_youwin" type="ColorRect" parent="UI"]
+visible = false
+offset_right = 40.0
+offset_bottom = 40.0
+scale = Vector2(29.0331, 16.7871)
+color = Color(1, 1, 1, 0.823529)
+
+[node name="you_win" type="TextureRect" parent="UI"]
+visible = false
+offset_left = 3.0
+offset_right = 1923.0
+offset_bottom = 1080.0
+scale = Vector2(0.601205, 0.601205)
+texture = ExtResource("21_88j14")
+expand_mode = 1
+
+[node name="play_again" type="Button" parent="UI" node_paths=PackedStringArray("img_fondo_youwin", "img_youwin", "img_gameover", "btn_playagain", "botones")]
+visible = false
+offset_left = 474.0
+offset_top = 531.0
+offset_right = 482.0
+offset_bottom = 539.0
+scale = Vector2(25.7668, 6.49766)
+theme_override_styles/focus = SubResource("StyleBoxEmpty_f1j2c")
+theme_override_styles/disabled_mirrored = SubResource("StyleBoxEmpty_3c8yq")
+theme_override_styles/disabled = SubResource("StyleBoxEmpty_hrygr")
+theme_override_styles/hover_pressed_mirrored = SubResource("StyleBoxEmpty_8qufa")
+theme_override_styles/hover_pressed = SubResource("StyleBoxEmpty_1equp")
+theme_override_styles/hover_mirrored = SubResource("StyleBoxEmpty_jq2gp")
+theme_override_styles/hover = SubResource("StyleBoxFlat_s7y03")
+theme_override_styles/pressed_mirrored = SubResource("StyleBoxEmpty_ltvhs")
+theme_override_styles/pressed = SubResource("StyleBoxEmpty_v4ejg")
+theme_override_styles/normal_mirrored = SubResource("StyleBoxEmpty_c2nrx")
+theme_override_styles/normal = SubResource("StyleBoxEmpty_yqr1d")
+script = ExtResource("22_3c8yq")
+img_fondo_youwin = NodePath("../fondo_youwin")
+img_youwin = NodePath("../you_win")
+img_gameover = NodePath("../game_over")
+btn_playagain = NodePath(".")
+botones = NodePath("../botones")
+
+[node name="TextureRect" type="TextureRect" parent="UI/play_again"]
+offset_left = -0.504522
+offset_top = 0.461705
+offset_right = 1955.5
+offset_bottom = 774.462
+scale = Vector2(0.00488387, 0.0105535)
+texture = ExtResource("22_f1j2c")
+
+[connection signal="body_entered" from="estructura/piso4/Area2D" to="estructura/piso4/Area2D" method="_on_body_entered"]
+[connection signal="body_exited" from="estructura/piso4/Area2D" to="estructura/piso4/Area2D" method="_on_body_exited"]
 [connection signal="body_entered" from="caldera1/Area2D" to="caldera1/Area2D" method="_on_body_entered"]
 [connection signal="body_exited" from="caldera1/Area2D" to="caldera1/Area2D" method="_on_body_exited"]
 [connection signal="body_entered" from="caldera2/Area2D" to="caldera2/Area2D" method="_on_body_entered"]

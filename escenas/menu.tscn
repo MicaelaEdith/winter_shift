@@ -2,12 +2,12 @@
 
 [ext_resource type="Script" uid="uid://b6cvwb7kqynf" path="res://scripts/menu.gd" id="1_5t3kx"]
 [ext_resource type="Texture2D" uid="uid://bgbl46rdoujyg" path="res://assets/menu_transiciones/fondo_menu.png" id="1_d7r87"]
-[ext_resource type="Texture2D" uid="uid://cjdh743my2ntu" path="res://assets/botones/iconsmusical.png" id="2_2owot"]
 [ext_resource type="Script" uid="uid://du3dn8kv5frqp" path="res://scripts/btns/btn_musica_fx.gd" id="2_6cq3m"]
-[ext_resource type="Texture2D" uid="uid://d15h8k8wtdxmr" path="res://assets/botones/iconssound.png" id="4_5t3kx"]
+[ext_resource type="Texture2D" uid="uid://bpal8uy1wov3k" path="res://assets/botones/musica_negro.png" id="4_yb3qj"]
+[ext_resource type="Texture2D" uid="uid://b3en8kc4wjjf0" path="res://assets/botones/sonido_negro.png" id="5_4gv4q"]
 [ext_resource type="Script" uid="uid://napalkll1nn0" path="res://scripts/btns/btn_play.gd" id="6_56ah5"]
 [ext_resource type="PackedScene" uid="uid://dibhybg6xw8f4" path="res://escenas/transiciones.tscn" id="7_xqndx"]
-[ext_resource type="Texture2D" uid="uid://b5spn6oda5n2d" path="res://assets/botones/play-12.png" id="8_yb3qj"]
+[ext_resource type="Texture2D" uid="uid://bcujkexiok76t" path="res://assets/botones/play.png" id="8_8jdmi"]
 
 [sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_6cq3m"]
 
@@ -65,7 +65,7 @@ layout_mode = 0
 offset_right = 40.0
 offset_bottom = 40.0
 scale = Vector2(0.19631, 0.203409)
-texture = ExtResource("2_2owot")
+texture = ExtResource("4_yb3qj")
 expand_mode = 1
 
 [node name="btn_fx" type="Button" parent="."]
@@ -93,7 +93,7 @@ layout_mode = 0
 offset_right = 40.0
 offset_bottom = 40.0
 scale = Vector2(0.19631, 0.203409)
-texture = ExtResource("4_5t3kx")
+texture = ExtResource("5_4gv4q")
 expand_mode = 1
 
 [node name="btn_play" type="Button" parent="."]
@@ -109,5 +109,5 @@ offset_top = 510.0
 offset_right = 860.0
 offset_bottom = 550.0
 scale = Vector2(4.02134, 1.86912)
-texture = ExtResource("8_yb3qj")
+texture = ExtResource("8_8jdmi")
 expand_mode = 1

@@ -16,6 +16,7 @@ extends CharacterBody2D
 
 var esta_en_ascensor := false
 var sumando := false
+var reparando_techo := false
 
 func _ready() -> void:
 	actualizar_luz()
@@ -23,11 +24,28 @@ func _ready() -> void:
 	
 func _physics_process(delta):
 	var direccion := 0
-	
 	if Input.is_action_pressed("ui_left"):
+		$ColorRect/AnimatedSprite2D.play("correr")
+		$ColorRect/AnimatedSprite2D.flip_h = true
 		direccion -= 1
+	elif Input.is_action_just_released("ui_left"):
+		$ColorRect/AnimatedSprite2D.stop()
+		
 	if Input.is_action_pressed("ui_right"):
+		$ColorRect/AnimatedSprite2D.flip_h = false
+		$ColorRect/AnimatedSprite2D.play("correr")
 		direccion += 1
+	elif Input.is_action_just_released("ui_right"):
+		$ColorRect/AnimatedSprite2D.stop()
+	
+	if not Input.is_action_pressed("ui_right") and not Input.is_action_pressed("ui_left"):
+		$ColorRect/AnimatedSprite2D.play("idle")
+		
+	if reparando_techo:
+		$ColorRect/AnimatedSprite2D.stop()
+		if Input.is_action_pressed("ui_accept"):
+			$ColorRect/AnimatedSprite2D.play("reparando_techo")
+	
 	
 	velocity.x = direccion * velocidad
 	
@@ -110,3 +128,7 @@ func actualizar_luz():
 		luz_p3.visible = true
 	elif GameManager.piso_actual == 4:
 		luz_p4.visible = true
+
+
+func _on_area_reparacion_body_entered(body: Node2D) -> void:
+	pass # Replace with function body.

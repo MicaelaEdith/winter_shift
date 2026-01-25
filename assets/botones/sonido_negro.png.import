@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://cjdh743my2ntu"
-path="res://.godot/imported/iconsmusical.png-c0cc4dcbe4ac440789f1e60ba783e9c3.ctex"
+uid="uid://b3en8kc4wjjf0"
+path="res://.godot/imported/sonido_negro.png-66f8e2b0c51faca239c740d3e83e0cba.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://assets/botones/iconsmusical.png"
-dest_files=["res://.godot/imported/iconsmusical.png-c0cc4dcbe4ac440789f1e60ba783e9c3.ctex"]
+source_file="res://assets/botones/sonido_negro.png"
+dest_files=["res://.godot/imported/sonido_negro.png-66f8e2b0c51faca239c740d3e83e0cba.ctex"]
 
 [params]
 

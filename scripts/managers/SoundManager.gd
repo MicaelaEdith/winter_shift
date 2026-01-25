@@ -6,25 +6,29 @@ var musica : AudioStream = preload("res://assets/audio/musica.mp3")
 var caldera : AudioStream = preload("res://assets/audio/caldera.mp3")
 
 var player_musica : AudioStreamPlayer
-var player_efectos : AudioStreamPlayer
+
+var players_fx: Array[AudioStreamPlayer] = []
+const FX_PLAYERS := 5
+
 var volumen_normal = 0
 
 var estado_musica = true
 var estado_fx = true
 
+
 func _ready() -> void:
 	player_musica = AudioStreamPlayer.new()
 	player_musica.autoplay = false
 	add_child(player_musica)
-	
-	player_efectos = AudioStreamPlayer.new()
-	player_efectos.autoplay = false
-	player_efectos.volume_db = volumen_normal
-	add_child(player_efectos)
-	
-	
+
+	for i in FX_PLAYERS:
+		var p := AudioStreamPlayer.new()
+		p.autoplay = false
+		p.volume_db = volumen_normal
+		add_child(p)
+		players_fx.append(p)
+
 	process_mode = Node.PROCESS_MODE_ALWAYS
-	
 
 func reproducir_musica() -> void:
 	player_musica.stream = musica
@@ -37,29 +41,39 @@ func reproducir_musica() -> void:
 
 	player_musica.play()
 
-
 func detener_musica() -> void:
 	if player_musica.playing:
 		player_musica.stop()
-		
+
+func _play_fx(stream: AudioStream, volume := 0) -> void:
+	if not estado_fx:
+		return
+
+	for p in players_fx:
+		if not p.playing:
+			p.volume_db = volume
+			p.stream = stream
+			p.play()
+			return
+
 func reproducir_click() -> void:
-	player_efectos.volume_db = volumen_normal
-	if estado_fx:
-		player_efectos.stream = click
-		player_efectos.play()
+	_play_fx(click, volumen_normal)
 
 func reproducir_caldera() -> void:
-	player_efectos.volume_db = -15
-	if estado_fx:
-		player_efectos.stream = caldera
-		player_efectos.play()
-		
+	if caldera.has_method("set_loop"):
+		caldera.set_loop(true)
+	_play_fx(caldera, -15)
+
+	
+func detener_caldera() -> void:
+	for p in players_fx:
+		if p.stream == caldera and p.playing:
+			p.stop()
+
+
 func reproducir_ding() -> void:
-	player_efectos.volume_db = volumen_normal
-	if estado_fx:
-		player_efectos.stream = ding
-		player_efectos.play()
-		
+	_play_fx(ding, volumen_normal)
+
 func boton_musica():
 	if estado_musica:
 		estado_musica = false
@@ -67,9 +81,6 @@ func boton_musica():
 	else:
 		reproducir_musica()
 		estado_musica = true
-		
+
 func boton_efectos():
-	if estado_fx:
-		estado_fx = false
-	else:
-		estado_fx= true
+	estado_fx = not estado_fx

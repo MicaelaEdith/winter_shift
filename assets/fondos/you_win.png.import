@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://d15h8k8wtdxmr"
-path="res://.godot/imported/iconssound.png-b5ca29d599dbb32df2313bbaf1f04c46.ctex"
+uid="uid://sedv31x57j55"
+path="res://.godot/imported/you_win.png-a49c0c6ae77067ac8af12bc6b42d5beb.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://assets/botones/iconssound.png"
-dest_files=["res://.godot/imported/iconssound.png-b5ca29d599dbb32df2313bbaf1f04c46.ctex"]
+source_file="res://assets/fondos/you_win.png"
+dest_files=["res://.godot/imported/you_win.png-a49c0c6ae77067ac8af12bc6b42d5beb.ctex"]
 
 [params]
 
