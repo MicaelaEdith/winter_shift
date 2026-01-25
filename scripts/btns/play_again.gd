@@ -5,6 +5,10 @@ extends Button
 @export var img_gameover : TextureRect
 @export var btn_playagain : Button
 @export var botones : CanvasGroup
+@export var contador : Label
+@export var personaje : CharacterBody2D
+@export var posicion_inicial_personaje : Marker2D
+@export var luces : Array[ColorRect]
 
 func _ready():
 	process_mode = Node.PROCESS_MODE_ALWAYS
@@ -32,5 +36,19 @@ func reiniciar_globales():
 	img_youwin.visible = false
 	img_gameover.visible = false
 	btn_playagain.visible = false
+
+	personaje.global_position = posicion_inicial_personaje.global_position
+	
+	luces[0].visible = true
+	luces[1].visible = false
+	luces[2].visible = false
+	luces[3].visible = false
+	luces[4].visible = false
 	
 	GameManager.toggle_pause()
+	
+	contador.dias_restantes = contador.dias_totales
+	contador.actualizar_label()
+	contador.iniciar_contador()
+	print ("el juego está: ", GameManager.juego_pausado)
+	

@@ -734,7 +734,7 @@ scale = Vector2(0.19631, 0.203409)
 texture = ExtResource("13_s4hgp")
 expand_mode = 1
 
-[node name="btn_pausa" type="Button" parent="UI/botones"]
+[node name="btn_pausa" type="Button" parent="UI/botones" node_paths=PackedStringArray("contador")]
 offset_left = 1079.0
 offset_top = 25.0
 offset_right = 1087.0
@@ -752,6 +752,7 @@ theme_override_styles/pressed = SubResource("StyleBoxEmpty_s4hgp")
 theme_override_styles/normal_mirrored = SubResource("StyleBoxEmpty_r01y2")
 theme_override_styles/normal = SubResource("StyleBoxEmpty_88j14")
 script = ExtResource("11_acisx")
+contador = NodePath("../../contador_dias")
 metadata/_edit_use_anchors_ = true
 
 [node name="TextureRect" type="TextureRect" parent="UI/botones/btn_pausa"]
@@ -810,7 +811,7 @@ scale = Vector2(0.601205, 0.601205)
 texture = ExtResource("21_88j14")
 expand_mode = 1
 
-[node name="play_again" type="Button" parent="UI" node_paths=PackedStringArray("img_fondo_youwin", "img_youwin", "img_gameover", "btn_playagain", "botones")]
+[node name="play_again" type="Button" parent="UI" node_paths=PackedStringArray("img_fondo_youwin", "img_youwin", "img_gameover", "btn_playagain", "botones", "contador", "personaje", "posicion_inicial_personaje", "luces")]
 visible = false
 offset_left = 474.0
 offset_top = 531.0
@@ -834,6 +835,10 @@ img_youwin = NodePath("../you_win")
 img_gameover = NodePath("../game_over")
 btn_playagain = NodePath(".")
 botones = NodePath("../botones")
+contador = NodePath("../contador_dias")
+personaje = NodePath("../../personaje")
+posicion_inicial_personaje = NodePath("../../inicio_personaje")
+luces = [NodePath("../../ascensor/luz_pb"), NodePath("../../ascensor/luz_p1"), NodePath("../../ascensor/luz_p2"), NodePath("../../ascensor/luz_p3"), NodePath("../../ascensor/luz_p4")]
 
 [node name="TextureRect" type="TextureRect" parent="UI/play_again"]
 offset_left = -0.504522
@@ -842,6 +847,9 @@ offset_right = 1955.5
 offset_bottom = 774.462
 scale = Vector2(0.00488387, 0.0105535)
 texture = ExtResource("22_f1j2c")
+
+[node name="inicio_personaje" type="Marker2D" parent="."]
+position = Vector2(488, 580)
 
 [connection signal="body_entered" from="estructura/piso4/Area2D" to="estructura/piso4/Area2D" method="_on_body_entered"]
 [connection signal="body_exited" from="estructura/piso4/Area2D" to="estructura/piso4/Area2D" method="_on_body_exited"]

@@ -7,16 +7,23 @@ extends Label
 @export var btn_playagain : Button
 @export var botones : CanvasGroup
 
-var dias_totales := 3
-var dias_restantes := 3 
+var pausar_contador = false
+var dias_totales := 4
+var dias_restantes := 4
 @export var segundos_por_dia := 3
 
 func _ready() -> void:
 	actualizar_label()
 	iniciar_contador()
+	
+func _process(delta: float) -> void:
+	if GameManager.juego_pausado:
+		pausar_contador = true
 
 func iniciar_contador() -> void:
-	while dias_restantes > 0 and not GameManager.juego_pausado:
+	while dias_restantes > 0:	
+		if pausar_contador:
+			break
 		await get_tree().create_timer(segundos_por_dia).timeout
 		dias_restantes -= 1
 		actualizar_label()
@@ -35,5 +42,6 @@ func ganar_juego() -> void:
 	img_fondo_youwin.visible = true
 	img_youwin.visible = true
 	btn_playagain.visible = true
+	
 	
 	
