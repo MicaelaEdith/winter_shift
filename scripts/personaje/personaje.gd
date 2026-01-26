@@ -26,6 +26,7 @@ func _ready() -> void:
 
 	
 func _physics_process(delta):
+	puede_reparar = GameManager.personaje_puede_reparar
 	var direccion := 0
 	if Input.is_action_pressed("ui_left"):
 		$ColorRect/AnimatedSprite2D.play("correr")
@@ -54,7 +55,9 @@ func _physics_process(delta):
 	if Input.is_action_pressed("ui_accept"):
 		if GameManager.activos.has("caldera1") or GameManager.activos.has("caldera2"):
 			if caldera1.tiene_al_personaje or caldera2.tiene_al_personaje:
-				$ColorRect/AnimatedSprite2D.play("reparando")
+				print("[Personaje] if de reparar caldera  ")
+				if not GameManager.piso_actual == 4:
+					$ColorRect/AnimatedSprite2D.play("reparando")
 				if caldera1.tiene_al_personaje:
 					caldera1.barra.descargando = false
 					caldera1.barra.cargar = false
@@ -146,15 +149,13 @@ func actualizar_luz():
 		luz_p4.visible = true
 
 func reparar_techo():
+	$ColorRect/AnimatedSprite2D.play("reparando_techo")
 	await get_tree().create_timer(3).timeout
-	var anim_actual = $ColorRect/AnimatedSprite2D.animation
-	if anim_actual == "reparando_techo":
-		EnemiesManager.gotera_2.visible = false
-		SoundManager.detener_gota()
-		reparando_techo = false
-		puede_reparar = false
 
-	pass
+	EnemiesManager.gotera_2.visible = false
+	SoundManager.detener_gota()
+	reparando_techo = false
+	puede_reparar = false
 
 func _on_area_reparacion_body_entered(body: Node2D) -> void:
 	pass # Replace with function body.

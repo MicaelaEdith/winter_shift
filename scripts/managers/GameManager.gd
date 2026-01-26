@@ -18,16 +18,16 @@ var img_caldera2: TextureRect
 var game_over := false
 var gana = false
 var dia = 92
-var personaje : CharacterBody2D
+var personaje_puede_reparar = false
 
 
 func _ready() -> void:
 	if SoundManager.estado_musica:
 		SoundManager.reproducir_musica()
+		
 	img_pausa = get_tree().current_scene.get_node("img_pausa")
 	img_caldera1 = get_tree().current_scene.get_node("caldera1")
 	img_caldera2 = get_tree().current_scene.get_node("caldera2")
-	personaje = get_tree().current_scene.get_node("personaje")
 		
 func _process(delta: float) -> void:
 	if not game_over:
@@ -39,9 +39,7 @@ func _process(delta: float) -> void:
 			
 func romper_caldera() -> void:
 	if juego_iniciado and not game_over:
-		if not personaje:
-			personaje = get_tree().current_scene.get_node("personaje")
-		personaje.puede_reparar = true
+		personaje_puede_reparar = true
 		while true:
 			await get_tree().create_timer(5.0).timeout
 			if reparar:

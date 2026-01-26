@@ -14,21 +14,17 @@ func _process(delta: float) -> void:
 		self.visible = true
 
 func _on_body_entered(body: Node2D) -> void:
+	print("[Caldera] - ENTRA a ", elemento," : la caldera tiene al jugador? ",lo_tiene)
 	lo_tiene = true
 	if body is CharacterBody2D:
 	
 		if elemento == "techo_1" or elemento == "techo_2":
 			GameManager.jugador_en_elemeto = elemento
 			personaje.reparando_techo = true
-				
 		else:
 			GameManager.reparando = true
 			GameManager.jugador_en_elemeto = elemento
 			if GameManager.activo == elemento:
-				var anim_actual = $"../../personaje/ColorRect/AnimatedSprite2D".animation
-				if not anim_actual == "reparando":
-					$"../../personaje/ColorRect/AnimatedSprite2D".stop()
-					$"../../personaje/ColorRect/AnimatedSprite2D".play("reparando")
 				barra.descargando = false
 				barra.cargar = true
 		
@@ -36,6 +32,7 @@ func _on_body_entered(body: Node2D) -> void:
 			
 func _on_body_exited(body: Node2D) -> void:
 	lo_tiene = false
+	print("[Caldera] - SALE de ", elemento," : la caldera tiene al jugador? ",lo_tiene)
 	if body is CharacterBody2D:
 		if elemento == "techo_1" or elemento == "techo_2":
 			personaje.reparando_techo = false

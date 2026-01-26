@@ -460,6 +460,7 @@ rotation = 0.016162
 scale = Vector2(0.0370141, 1.83467)
 color = Color(0.134143, 0.227822, 0.611236, 1)
 script = ExtResource("3_68mvh")
+velocidad_carga = 3
 barra = NodePath("barra_roja")
 elemento = "caldera1"
 
@@ -576,7 +577,44 @@ offset_bottom = 549.0
 scale = Vector2(0.138339, 0.126084)
 texture = ExtResource("9_8qufa")
 
+[node name="Area2D3" type="Area2D" parent="gotera_1" node_paths=PackedStringArray("barra", "personaje")]
+position = Vector2(86.7434, -467.942)
+rotation = -0.0448867
+scale = Vector2(4.97491, 12.9916)
+skew = 0.00759256
+script = ExtResource("4_lyxkq")
+elemento = "techo_1"
+barra = NodePath("../../caldera1/barra_azul")
+personaje = NodePath("../../personaje")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="gotera_1/Area2D3"]
+position = Vector2(25.9513, 26.866)
+shape = SubResource("RectangleShape2D_68mvh")
+
+[node name="barra_gota_3" type="ColorRect" parent="gotera_1" node_paths=PackedStringArray("barra")]
+visible = false
+offset_left = 1539.69
+offset_top = -261.73
+offset_right = 1579.69
+offset_bottom = -221.73
+rotation = -0.0129623
+scale = Vector2(0.499381, 5.60059)
+color = Color(0.134143, 0.227822, 0.611236, 1)
+script = ExtResource("3_68mvh")
+total_time = 10.0
+velocidad_carga = 3
+barra = NodePath("barra_roja")
+elemento = "techo_2"
+
+[node name="barra_roja" type="ColorRect" parent="gotera_1/barra_gota_3"]
+layout_mode = 0
+offset_right = 40.0
+offset_bottom = 40.0
+scale = Vector2(0.996604, 1.00099)
+color = Color(0.748273, 0.0346736, 0.215316, 1)
+
 [node name="gotera_2" type="TextureRect" parent="."]
+visible = false
 offset_left = 637.0
 offset_top = 95.0
 offset_right = 1088.0
@@ -585,10 +623,10 @@ scale = Vector2(0.153481, 0.13949)
 texture = ExtResource("10_1equp")
 
 [node name="Area2D2" type="Area2D" parent="gotera_2" node_paths=PackedStringArray("barra", "personaje")]
-position = Vector2(78.1855, -444.477)
-rotation = -0.0450136
-scale = Vector2(5.74848, 11.4627)
-skew = 0.00782478
+position = Vector2(104.247, -387.125)
+rotation = -0.0450135
+scale = Vector2(4.48412, 11.743)
+skew = 0.00782454
 script = ExtResource("4_lyxkq")
 elemento = "techo_2"
 barra = NodePath("../../caldera1/barra_azul")
@@ -600,11 +638,10 @@ shape = SubResource("RectangleShape2D_68mvh")
 
 [node name="barra_gota_2" type="ColorRect" parent="gotera_2" node_paths=PackedStringArray("barra")]
 visible = false
-layout_mode = 0
-offset_left = 65.1547
-offset_top = -136.211
-offset_right = 105.155
-offset_bottom = -96.2108
+offset_left = 65.1494
+offset_top = -136.21
+offset_right = 105.149
+offset_bottom = -96.2103
 rotation = -0.0129623
 scale = Vector2(0.499381, 5.60059)
 color = Color(0.134143, 0.227822, 0.611236, 1)
@@ -680,6 +717,7 @@ scale = Vector2(0.339875, 0.00752528)
 color = Color(0.956863, 0.952941, 0.807843, 0)
 
 [node name="TextureRect" type="TextureRect" parent="ascensor/luz_p1"]
+layout_mode = 0
 offset_left = -17.1309
 offset_top = -80.8355
 offset_right = 273.869
@@ -697,6 +735,7 @@ scale = Vector2(0.339875, 0.00752528)
 color = Color(0.956863, 0.952941, 0.807843, 0)
 
 [node name="TextureRect" type="TextureRect" parent="ascensor/luz_p2"]
+layout_mode = 0
 offset_left = -17.1309
 offset_top = -80.8355
 offset_right = 273.869
@@ -714,6 +753,7 @@ scale = Vector2(0.339875, 0.00752528)
 color = Color(0.956863, 0.952941, 0.807843, 0)
 
 [node name="TextureRect" type="TextureRect" parent="ascensor/luz_p3"]
+layout_mode = 0
 offset_left = -17.1309
 offset_top = -80.8355
 offset_right = 273.869
@@ -740,6 +780,7 @@ scale = Vector2(0.339875, 0.00752528)
 color = Color(0.956863, 0.952941, 0.807843, 0)
 
 [node name="TextureRect" type="TextureRect" parent="ascensor/luz_p4"]
+layout_mode = 0
 offset_left = -17.1309
 offset_top = -80.8355
 offset_right = 273.869
@@ -936,6 +977,7 @@ posicion_inicial_personaje = NodePath("../../inicio_personaje")
 luces = [NodePath("../../ascensor/luz_pb"), NodePath("../../ascensor/luz_p1"), NodePath("../../ascensor/luz_p2"), NodePath("../../ascensor/luz_p3"), NodePath("../../ascensor/luz_p4")]
 
 [node name="TextureRect" type="TextureRect" parent="UI/play_again"]
+layout_mode = 0
 offset_left = -0.367309
 offset_top = 0.333394
 offset_right = 1955.63
@@ -950,6 +992,8 @@ position = Vector2(488, 580)
 [connection signal="body_exited" from="caldera1/Area2D" to="caldera1/Area2D" method="_on_body_exited"]
 [connection signal="body_entered" from="caldera2/Area2D" to="caldera2/Area2D" method="_on_body_entered"]
 [connection signal="body_exited" from="caldera2/Area2D" to="caldera2/Area2D" method="_on_body_exited"]
+[connection signal="body_entered" from="gotera_1/Area2D3" to="gotera_1/Area2D3" method="_on_body_entered"]
+[connection signal="body_exited" from="gotera_1/Area2D3" to="gotera_1/Area2D3" method="_on_body_exited"]
 [connection signal="body_entered" from="gotera_2/Area2D2" to="gotera_2/Area2D2" method="_on_body_entered"]
 [connection signal="body_exited" from="gotera_2/Area2D2" to="gotera_2/Area2D2" method="_on_body_exited"]
 [connection signal="body_entered" from="ascensor" to="personaje" method="_on_ascensor_body_entered"]

@@ -6,8 +6,8 @@ extends Node2D
 var transiciones_imagenes := [
 	[
 		preload("res://assets/menu_transiciones/transicion_1.png"),
-		preload("res://assets/menu_transiciones/transicion_2.png"),
-		preload("res://assets/menu_transiciones/transicion_3.png")
+		#preload("res://assets/menu_transiciones/transicion_2.png"),
+		#preload("res://assets/menu_transiciones/transicion_3.png")
 	],
 ]
 
