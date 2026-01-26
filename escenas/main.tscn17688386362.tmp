@@ -470,13 +470,12 @@ offset_bottom = 40.0
 scale = Vector2(0.996604, 1.00099)
 color = Color(0.748273, 0.0346736, 0.215316, 1)
 
-[node name="Area2D" type="Area2D" parent="caldera1" node_paths=PackedStringArray("barra", "personaje")]
+[node name="Area2D" type="Area2D" parent="caldera1" node_paths=PackedStringArray("barra")]
 position = Vector2(-8.14401, 11.0796)
 scale = Vector2(0.816058, 1.09229)
 script = ExtResource("4_lyxkq")
 elemento = "caldera1"
 barra = NodePath("../barra_azul")
-personaje = NodePath("../../personaje")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="caldera1/Area2D"]
 position = Vector2(25.9513, 26.866)
@@ -510,19 +509,21 @@ offset_bottom = 40.0
 scale = Vector2(0.996604, 1.00099)
 color = Color(0.748273, 0.0346736, 0.215316, 1)
 
-[node name="Area2D" type="Area2D" parent="caldera2" node_paths=PackedStringArray("barra", "personaje")]
-position = Vector2(9.20627, 17.7274)
-scale = Vector2(0.683651, 0.992517)
+[node name="Area2D2" type="Area2D" parent="caldera2" node_paths=PackedStringArray("barra", "personaje")]
+position = Vector2(-8.14403, -579.464)
+rotation = -0.127403
+scale = Vector2(0.314639, 1.77047)
+skew = 0.114321
 script = ExtResource("4_lyxkq")
-elemento = "caldera2"
-barra = NodePath("../barra_azul")
+elemento = "techo_2"
+barra = NodePath("../../caldera1/barra_azul")
 personaje = NodePath("../../personaje")
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="caldera2/Area2D"]
-position = Vector2(17.9911, 29.9009)
+[node name="CollisionShape2D" type="CollisionShape2D" parent="caldera2/Area2D2"]
+position = Vector2(25.9513, 26.866)
 shape = SubResource("RectangleShape2D_68mvh")
 
-[node name="personaje" type="CharacterBody2D" parent="." node_paths=PackedStringArray("marca_pb", "marca_p1", "marca_p2", "marca_p3", "marca_p4", "luz_pb", "luz_p1", "luz_p2", "luz_p3", "luz_p4", "caldera1", "caldera2")]
+[node name="personaje" type="CharacterBody2D" parent="." node_paths=PackedStringArray("marca_pb", "marca_p1", "marca_p2", "marca_p3", "marca_p4", "luz_pb", "luz_p1", "luz_p2", "luz_p3", "luz_p4")]
 position = Vector2(476, 548)
 scale = Vector2(0.919788, 0.919788)
 script = ExtResource("2_0kxa1")
@@ -536,8 +537,6 @@ luz_p1 = NodePath("../ascensor/luz_p1")
 luz_p2 = NodePath("../ascensor/luz_p2")
 luz_p3 = NodePath("../ascensor/luz_p3")
 luz_p4 = NodePath("../ascensor/luz_p4")
-caldera1 = NodePath("../caldera1/Area2D")
-caldera2 = NodePath("../caldera2/Area2D")
 
 [node name="ColorRect" type="ColorRect" parent="personaje"]
 offset_right = 40.0
@@ -577,26 +576,13 @@ scale = Vector2(0.138339, 0.126084)
 texture = ExtResource("9_8qufa")
 
 [node name="gotera_2" type="TextureRect" parent="."]
+visible = false
 offset_left = 637.0
 offset_top = 95.0
 offset_right = 1088.0
 offset_bottom = 535.0
 scale = Vector2(0.153481, 0.13949)
 texture = ExtResource("10_1equp")
-
-[node name="Area2D2" type="Area2D" parent="gotera_2" node_paths=PackedStringArray("barra", "personaje")]
-position = Vector2(78.1855, -444.477)
-rotation = -0.0450136
-scale = Vector2(5.74848, 11.4627)
-skew = 0.00782478
-script = ExtResource("4_lyxkq")
-elemento = "techo_2"
-barra = NodePath("../../caldera1/barra_azul")
-personaje = NodePath("../../personaje")
-
-[node name="CollisionShape2D" type="CollisionShape2D" parent="gotera_2/Area2D2"]
-position = Vector2(25.9513, 26.866)
-shape = SubResource("RectangleShape2D_68mvh")
 
 [node name="barra_gota_2" type="ColorRect" parent="gotera_2" node_paths=PackedStringArray("barra")]
 visible = false
@@ -612,7 +598,7 @@ script = ExtResource("3_68mvh")
 total_time = 10.0
 velocidad_carga = 3
 barra = NodePath("barra_roja")
-elemento = "techo_2"
+elemento = "caldera2"
 
 [node name="barra_roja" type="ColorRect" parent="gotera_2/barra_gota_2"]
 layout_mode = 0
@@ -620,6 +606,18 @@ offset_right = 40.0
 offset_bottom = 40.0
 scale = Vector2(0.996604, 1.00099)
 color = Color(0.748273, 0.0346736, 0.215316, 1)
+
+[node name="Area2D" type="Area2D" parent="gotera_2" node_paths=PackedStringArray("barra", "personaje")]
+position = Vector2(397.443, 3419.61)
+scale = Vector2(12.5797, 6.42201)
+script = ExtResource("4_lyxkq")
+elemento = "techo_2"
+barra = NodePath("../../caldera2/barra_azul")
+personaje = NodePath("../../personaje")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="gotera_2/Area2D"]
+position = Vector2(17.9911, 29.9009)
+shape = SubResource("RectangleShape2D_68mvh")
 
 [node name="ascensor" type="Area2D" parent="."]
 position = Vector2(543, 19)
@@ -759,7 +757,7 @@ texture = ExtResource("7_7an46")
 visible = false
 offset_right = 1164.0
 offset_bottom = 710.0
-color = Color(0.0169952, 0.0332499, 0.0653198, 0.960784)
+color = Color(0, 0.0235294, 0.12549, 0.960784)
 
 [node name="UI" type="CanvasLayer" parent="."]
 
@@ -948,9 +946,9 @@ position = Vector2(488, 580)
 
 [connection signal="body_entered" from="caldera1/Area2D" to="caldera1/Area2D" method="_on_body_entered"]
 [connection signal="body_exited" from="caldera1/Area2D" to="caldera1/Area2D" method="_on_body_exited"]
-[connection signal="body_entered" from="caldera2/Area2D" to="caldera2/Area2D" method="_on_body_entered"]
-[connection signal="body_exited" from="caldera2/Area2D" to="caldera2/Area2D" method="_on_body_exited"]
-[connection signal="body_entered" from="gotera_2/Area2D2" to="gotera_2/Area2D2" method="_on_body_entered"]
-[connection signal="body_exited" from="gotera_2/Area2D2" to="gotera_2/Area2D2" method="_on_body_exited"]
+[connection signal="body_entered" from="caldera2/Area2D2" to="caldera2/Area2D2" method="_on_body_entered"]
+[connection signal="body_exited" from="caldera2/Area2D2" to="caldera2/Area2D2" method="_on_body_exited"]
+[connection signal="body_entered" from="gotera_2/Area2D" to="gotera_2/Area2D" method="_on_body_entered"]
+[connection signal="body_exited" from="gotera_2/Area2D" to="gotera_2/Area2D" method="_on_body_exited"]
 [connection signal="body_entered" from="ascensor" to="personaje" method="_on_ascensor_body_entered"]
 [connection signal="body_exited" from="ascensor" to="personaje" method="_on_ascensor_body_exited"]

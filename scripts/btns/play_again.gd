@@ -27,9 +27,11 @@ func reiniciar_globales():
 	GameManager.activo = ""
 	GameManager.reparar = false
 	GameManager.contra_barra = false
-	GameManager.juego_iniciado = false
+	GameManager.juego_iniciado = true
 	GameManager.game_over = false
 	GameManager.gana = false
+	GameManager.img_caldera1.visible = true
+	GameManager.img_caldera2.visible = true
 	
 	botones.visible = true
 	img_fondo_youwin.visible = false

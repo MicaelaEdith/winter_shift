@@ -1,13 +1,13 @@
 [gd_scene load_steps=20 format=3 uid="uid://xbpro4ym7uau"]
 
 [ext_resource type="Script" uid="uid://b6cvwb7kqynf" path="res://scripts/menu.gd" id="1_5t3kx"]
-[ext_resource type="Texture2D" uid="uid://bgbl46rdoujyg" path="res://assets/menu_transiciones/fondo_menu.png" id="1_d7r87"]
 [ext_resource type="Script" uid="uid://du3dn8kv5frqp" path="res://scripts/btns/btn_musica_fx.gd" id="2_6cq3m"]
-[ext_resource type="Texture2D" uid="uid://bpal8uy1wov3k" path="res://assets/botones/musica_negro.png" id="4_yb3qj"]
-[ext_resource type="Texture2D" uid="uid://b3en8kc4wjjf0" path="res://assets/botones/sonido_negro.png" id="5_4gv4q"]
+[ext_resource type="Texture2D" uid="uid://biev0576sxdy1" path="res://assets/menu_transiciones/menu.png" id="2_yb3qj"]
+[ext_resource type="Texture2D" uid="uid://dwdcus4nt5hm4" path="res://assets/botones/musica_blanco.png" id="4_yb3qj"]
+[ext_resource type="Texture2D" uid="uid://b6v3tvbu4mr2e" path="res://assets/botones/sonido_blanco.png" id="5_4gv4q"]
 [ext_resource type="Script" uid="uid://napalkll1nn0" path="res://scripts/btns/btn_play.gd" id="6_56ah5"]
 [ext_resource type="PackedScene" uid="uid://dibhybg6xw8f4" path="res://escenas/transiciones.tscn" id="7_xqndx"]
-[ext_resource type="Texture2D" uid="uid://bcujkexiok76t" path="res://assets/botones/play.png" id="8_8jdmi"]
+[ext_resource type="Texture2D" uid="uid://yjpgws3ktucf" path="res://assets/botones/play_blanco.png" id="8_yb3qj"]
 
 [sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_6cq3m"]
 
@@ -37,14 +37,14 @@ script = ExtResource("1_5t3kx")
 [node name="TextureRect" type="TextureRect" parent="."]
 offset_right = 1165.0
 offset_bottom = 660.0
-texture = ExtResource("1_d7r87")
+texture = ExtResource("2_yb3qj")
 expand_mode = 1
 
 [node name="btn_musica" type="Button" parent="."]
-offset_left = 835.0
-offset_top = 41.0
-offset_right = 843.0
-offset_bottom = 49.0
+offset_left = 908.0
+offset_top = 47.0
+offset_right = 916.0
+offset_bottom = 55.0
 scale = Vector2(7.71941, 6.78369)
 theme_override_styles/focus = SubResource("StyleBoxEmpty_6cq3m")
 theme_override_styles/disabled_mirrored = SubResource("StyleBoxEmpty_5t3kx")
@@ -69,10 +69,10 @@ texture = ExtResource("4_yb3qj")
 expand_mode = 1
 
 [node name="btn_fx" type="Button" parent="."]
-offset_left = 918.0
-offset_top = 39.0
-offset_right = 926.0
-offset_bottom = 47.0
+offset_left = 991.0
+offset_top = 45.0
+offset_right = 999.0
+offset_bottom = 53.0
 scale = Vector2(7.71941, 6.78369)
 theme_override_styles/focus = SubResource("StyleBoxEmpty_6cq3m")
 theme_override_styles/disabled_mirrored = SubResource("StyleBoxEmpty_5t3kx")
@@ -97,8 +97,11 @@ texture = ExtResource("5_4gv4q")
 expand_mode = 1
 
 [node name="btn_play" type="Button" parent="."]
-offset_right = 8.0
-offset_bottom = 8.0
+offset_left = -217.0
+offset_top = -95.0
+offset_right = -209.0
+offset_bottom = -87.0
+scale = Vector2(1.16253, 1.16253)
 script = ExtResource("6_56ah5")
 escena = ExtResource("7_xqndx")
 
@@ -109,5 +112,5 @@ offset_top = 510.0
 offset_right = 860.0
 offset_bottom = 550.0
 scale = Vector2(4.02134, 1.86912)
-texture = ExtResource("8_8jdmi")
+texture = ExtResource("8_yb3qj")
 expand_mode = 1

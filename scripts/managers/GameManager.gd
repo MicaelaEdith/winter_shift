@@ -2,20 +2,23 @@
 extends Node
 
 var piso_actual :int = 0
-var elementos :Array[String] = ["caldera1", "caldera2"]
+var elementos : Array[String] = ["caldera1", "caldera2"]
+var activos : Array[String]
 var descarga = true
 var reparando = false
 var jugador_en_elemeto = ""
 var activo = ""
 var reparar = false
 var contra_barra = false
-var juego_iniciado = false
+var juego_iniciado = true  #cambiar antes de exportar !!!!!!!!!!!!!!!
 var juego_pausado = false
 var img_pausa: ColorRect
 var img_caldera1: TextureRect
 var img_caldera2: TextureRect
 var game_over := false
 var gana = false
+var dia = 92
+var personaje : CharacterBody2D
 
 
 func _ready() -> void:
@@ -24,6 +27,7 @@ func _ready() -> void:
 	img_pausa = get_tree().current_scene.get_node("img_pausa")
 	img_caldera1 = get_tree().current_scene.get_node("caldera1")
 	img_caldera2 = get_tree().current_scene.get_node("caldera2")
+	personaje = get_tree().current_scene.get_node("personaje")
 		
 func _process(delta: float) -> void:
 	if not game_over:
@@ -35,13 +39,17 @@ func _process(delta: float) -> void:
 			
 func romper_caldera() -> void:
 	if juego_iniciado and not game_over:
+		if not personaje:
+			personaje = get_tree().current_scene.get_node("personaje")
+		personaje.puede_reparar = true
 		while true:
-			await get_tree().create_timer(6.0).timeout
+			await get_tree().create_timer(5.0).timeout
 			if reparar:
 				continue
-
+				
 			var caldera = randi_range(0, elementos.size() - 1)
 			activo = elementos[caldera]
+			activos.append(activo)
 			reparar = true
 
 			SoundManager.reproducir_caldera()

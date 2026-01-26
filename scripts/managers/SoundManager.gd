@@ -4,6 +4,7 @@ var click : AudioStream = preload("res://assets/audio/click.mp3")
 var ding : AudioStream = preload("res://assets/audio/ding.mp3")
 var musica : AudioStream = preload("res://assets/audio/musica.mp3")
 var caldera : AudioStream = preload("res://assets/audio/caldera.mp3")
+var gota : AudioStream = preload("res://assets/audio/gota.mp3")
 
 var player_musica : AudioStreamPlayer
 
@@ -64,11 +65,21 @@ func reproducir_caldera() -> void:
 		caldera.set_loop(true)
 	_play_fx(caldera, -15)
 
-	
 func detener_caldera() -> void:
 	for p in players_fx:
 		if p.stream == caldera and p.playing:
 			p.stop()
+			
+func reproducir_gota() -> void:
+	if caldera.has_method("set_loop"):
+		caldera.set_loop(true)
+	_play_fx(gota, 0)
+
+func detener_gota() -> void:
+	for p in players_fx:
+		if p.stream == gota and p.playing:
+			p.stop()
+
 
 
 func reproducir_ding() -> void:

@@ -1,6 +1,6 @@
 extends ColorRect
 
-@export var total_time: float = 25.0
+@export var total_time: float = 15.0
 @export var velocidad_carga := 2
 @export var barra: ColorRect
 @export var elemento : String
@@ -52,7 +52,7 @@ func _process(delta: float) -> void:
 		if Input.is_action_pressed("ui_accept"):
 			time_left += delta * velocidad_carga
 			time_left = min(time_left, total_time)
-			$"../../personaje/ColorRect/AnimatedSprite2D".play("reparando")
+			
 
 		var ratio := time_left / total_time
 		var nueva_altura := altura_total * ratio
@@ -66,4 +66,5 @@ func _process(delta: float) -> void:
 			if GameManager.activo == "caldera1" or GameManager.activo == "caldera2":
 				SoundManager.detener_caldera()
 			GameManager.activo = ""
+			GameManager.activos.erase(GameManager.activo)
 			

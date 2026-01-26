@@ -21,9 +21,10 @@ config/icon="res://icon.svg"
 
 SoundManager="*res://scripts/managers/SoundManager.gd"
 GameManager="*res://scripts/managers/GameManager.gd"
+EnemiesManager="*res://scripts/managers/EnemiesManager.gd"
 
 [rendering]
 
 renderer/rendering_method="gl_compatibility"
 renderer/rendering_method.mobile="gl_compatibility"
-environment/defaults/default_clear_color=Color(0.00649738, 0.0188426, 0.104028, 0.890196)
+environment/defaults/default_clear_color=Color(0.666667, 0.627451, 0.65098, 1)

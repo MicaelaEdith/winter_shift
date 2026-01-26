@@ -13,10 +13,13 @@ extends CharacterBody2D
 @export var luz_p2: ColorRect
 @export var luz_p3: ColorRect
 @export var luz_p4: ColorRect
+@export var caldera1: Area2D
+@export var caldera2: Area2D
 
 var esta_en_ascensor := false
 var sumando := false
 var reparando_techo := false
+var puede_reparar = false
 
 func _ready() -> void:
 	actualizar_luz()
@@ -44,7 +47,20 @@ func _physics_process(delta):
 	if reparando_techo:
 		$ColorRect/AnimatedSprite2D.stop()
 		if Input.is_action_pressed("ui_accept"):
-			$ColorRect/AnimatedSprite2D.play("reparando_techo")
+			if puede_reparar:
+				$ColorRect/AnimatedSprite2D.play("reparando_techo")
+				reparar_techo()
+	
+	if Input.is_action_pressed("ui_accept"):
+		if GameManager.activos.has("caldera1") or GameManager.activos.has("caldera2"):
+			if caldera1.tiene_al_personaje or caldera2.tiene_al_personaje:
+				$ColorRect/AnimatedSprite2D.play("reparando")
+				if caldera1.tiene_al_personaje:
+					caldera1.barra.descargando = false
+					caldera1.barra.cargar = false
+				elif caldera2.tiene_al_personaje:
+					caldera2.barra.descargando = false
+					caldera2.barra.cargar = false
 	
 	
 	velocity.x = direccion * velocidad
@@ -129,6 +145,16 @@ func actualizar_luz():
 	elif GameManager.piso_actual == 4:
 		luz_p4.visible = true
 
+func reparar_techo():
+	await get_tree().create_timer(3).timeout
+	var anim_actual = $ColorRect/AnimatedSprite2D.animation
+	if anim_actual == "reparando_techo":
+		EnemiesManager.gotera_2.visible = false
+		SoundManager.detener_gota()
+		reparando_techo = false
+		puede_reparar = false
+
+	pass
 
 func _on_area_reparacion_body_entered(body: Node2D) -> void:
 	pass # Replace with function body.
