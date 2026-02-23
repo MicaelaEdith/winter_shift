@@ -3,6 +3,7 @@ extends Node
 
 var piso_actual :int = 0
 var elementos : Array[String] = ["caldera1", "caldera2"]
+var dias_array : Array[int] = [91,81,72,63,52,43,34,25,17,9]
 var activos : Array[String]
 var descarga = true
 var reparando = false
@@ -10,7 +11,7 @@ var jugador_en_elemeto = ""
 var activo = ""
 var reparar = false
 var contra_barra = false
-var juego_iniciado = true  #cambiar antes de exportar !!!!!!!!!!!!!!!
+var juego_iniciado = true
 var juego_pausado = false
 var img_pausa: ColorRect
 var img_caldera1: TextureRect
@@ -19,6 +20,8 @@ var game_over := false
 var gana = false
 var dia = 92
 var personaje_puede_reparar = false
+var hay_caldera_rota = false
+var caldera_rota = ""
 
 
 func _ready() -> void:
@@ -34,9 +37,14 @@ func _process(delta: float) -> void:
 		if reparando:
 			elementos.find(jugador_en_elemeto)
 			
-		if descarga:
+		if dias_array.has(dia):
+			if hay_caldera_rota:
+				game_over = true
 			romper_caldera()
-			
+	
+	else:
+		game_over_()
+		
 func romper_caldera() -> void:
 	if juego_iniciado and not game_over:
 		personaje_puede_reparar = true
@@ -45,14 +53,15 @@ func romper_caldera() -> void:
 			if reparar:
 				continue
 				
-			var caldera = randi_range(0, elementos.size() - 1)
-			activo = elementos[caldera]
+			var caldera = randi_range(0, 1)
+			caldera_rota = elementos[caldera]
 			activos.append(activo)
 			reparar = true
+			hay_caldera_rota = true
 
 			SoundManager.reproducir_caldera()
 
-func _on_caldera_se_rompe() -> void:
+func _on_caldera_se_rompe():
 	reparar = true
 	
 func toggle_pause():
@@ -73,6 +82,7 @@ func toggle_pause():
 	else:
 		img_pausa.visible = false
 		SoundManager.player_musica.volume_db = -20
+		SoundManager.detener_caldera()
 	
 func pause_game():
 	if not juego_pausado:
@@ -82,7 +92,8 @@ func resume_game():
 	if juego_pausado:
 		toggle_pause()
 	
-
+func game_over_():
+	print("perdió")
 
 	
 	

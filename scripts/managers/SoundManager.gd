@@ -31,6 +31,8 @@ func _ready() -> void:
 
 	process_mode = Node.PROCESS_MODE_ALWAYS
 
+
+
 func reproducir_musica() -> void:
 	player_musica.stream = musica
 	player_musica.volume_db = -20

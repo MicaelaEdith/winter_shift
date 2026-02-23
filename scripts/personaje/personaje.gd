@@ -24,7 +24,6 @@ var puede_reparar = false
 func _ready() -> void:
 	actualizar_luz()
 
-	
 func _physics_process(delta):
 	puede_reparar = GameManager.personaje_puede_reparar
 	var direccion := 0
@@ -48,23 +47,23 @@ func _physics_process(delta):
 	if reparando_techo:
 		$ColorRect/AnimatedSprite2D.stop()
 		if Input.is_action_pressed("ui_accept"):
+			#print("[Personaje - if animacion techo] Gamemanager.jugador_en_elemento dice: ", GameManager.jugador_en_elemeto)
 			if puede_reparar:
 				$ColorRect/AnimatedSprite2D.play("reparando_techo")
 				reparar_techo()
 	
 	if Input.is_action_pressed("ui_accept"):
-		if GameManager.activos.has("caldera1") or GameManager.activos.has("caldera2"):
+		if GameManager.caldera_rota != "" :
 			if caldera1.tiene_al_personaje or caldera2.tiene_al_personaje:
-				print("[Personaje] if de reparar caldera  ")
+				#print("[Personaje] if de reparar caldera")
 				if not GameManager.piso_actual == 4:
 					$ColorRect/AnimatedSprite2D.play("reparando")
 				if caldera1.tiene_al_personaje:
 					caldera1.barra.descargando = false
-					caldera1.barra.cargar = false
+					caldera1.barra.cargar = true
 				elif caldera2.tiene_al_personaje:
 					caldera2.barra.descargando = false
-					caldera2.barra.cargar = false
-	
+					caldera2.barra.cargar = true
 	
 	velocity.x = direccion * velocidad
 	
@@ -151,11 +150,21 @@ func actualizar_luz():
 func reparar_techo():
 	$ColorRect/AnimatedSprite2D.play("reparando_techo")
 	await get_tree().create_timer(3).timeout
+	
+	if GameManager.jugador_en_elemeto == "techo_1":
+		
+		EnemiesManager.gotera_1.visible = false
+		SoundManager.detener_gota()
+		reparando_techo = false
+		puede_reparar = false
 
-	EnemiesManager.gotera_2.visible = false
-	SoundManager.detener_gota()
-	reparando_techo = false
-	puede_reparar = false
+
+	if GameManager.jugador_en_elemeto == "techo_2":
+		
+		EnemiesManager.gotera_2.visible = false
+		SoundManager.detener_gota()
+		reparando_techo = false
+		puede_reparar = false
 
 func _on_area_reparacion_body_entered(body: Node2D) -> void:
-	pass # Replace with function body.
+	pass

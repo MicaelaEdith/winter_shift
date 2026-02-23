@@ -14,8 +14,8 @@ func _process(delta: float) -> void:
 		self.visible = true
 
 func _on_body_entered(body: Node2D) -> void:
-	print("[Caldera] - ENTRA a ", elemento," : la caldera tiene al jugador? ",lo_tiene)
 	lo_tiene = true
+	print("[Caldera] - ENTRA a ", elemento," : la caldera tiene al jugador? ",lo_tiene)
 	if body is CharacterBody2D:
 	
 		if elemento == "techo_1" or elemento == "techo_2":
@@ -25,11 +25,10 @@ func _on_body_entered(body: Node2D) -> void:
 			GameManager.reparando = true
 			GameManager.jugador_en_elemeto = elemento
 			if GameManager.activo == elemento:
+				print("[CALDERA] cargando barra")
 				barra.descargando = false
 				barra.cargar = true
-		
-			
-			
+				
 func _on_body_exited(body: Node2D) -> void:
 	lo_tiene = false
 	print("[Caldera] - SALE de ", elemento," : la caldera tiene al jugador? ",lo_tiene)

@@ -284,7 +284,7 @@ offset_left = -6.0
 offset_top = -7.0
 offset_right = 34.0
 offset_bottom = 33.0
-scale = Vector2(28.9237, 16.363)
+scale = Vector2(28.9491, 16.363)
 texture = ExtResource("1_3c8yq")
 expand_mode = 1
 
@@ -338,7 +338,7 @@ position = Vector2(20.042, 18.9396)
 shape = SubResource("RectangleShape2D_dkga6")
 
 [node name="piso2" type="StaticBody2D" parent="estructura"]
-position = Vector2(337, 380)
+position = Vector2(337, 382)
 rotation = -0.0051385
 scale = Vector2(12.0331, 0.291519)
 
@@ -593,6 +593,7 @@ shape = SubResource("RectangleShape2D_68mvh")
 
 [node name="barra_gota_3" type="ColorRect" parent="gotera_1" node_paths=PackedStringArray("barra")]
 visible = false
+layout_mode = 0
 offset_left = 1539.69
 offset_top = -261.73
 offset_right = 1579.69
@@ -638,6 +639,7 @@ shape = SubResource("RectangleShape2D_68mvh")
 
 [node name="barra_gota_2" type="ColorRect" parent="gotera_2" node_paths=PackedStringArray("barra")]
 visible = false
+layout_mode = 0
 offset_left = 65.1494
 offset_top = -136.21
 offset_right = 105.149
