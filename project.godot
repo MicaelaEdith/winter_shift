@@ -8,11 +8,15 @@
 
 config_version=5
 
+[animation]
+
+compatibility/default_parent_skeleton_in_mesh_instance_3d=true
+
 [application]
 
 config/name="winter_shift"
 run/main_scene="uid://xbpro4ym7uau"
-config/features=PackedStringArray("4.4", "GL Compatibility")
+config/features=PackedStringArray("4.6", "GL Compatibility")
 boot_splash/bg_color=Color(0.0980392, 0.109804, 0.12549, 1)
 boot_splash/image="uid://dddgl7rtsng3w"
 config/icon="res://icon.svg"

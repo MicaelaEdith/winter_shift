@@ -60,5 +60,4 @@ func _iniciar_fade_out():
 
 
 func _cargar_siguiente_escena():
-	GameManager.juego_iniciado = true
 	get_tree().change_scene_to_file(escena_destino)

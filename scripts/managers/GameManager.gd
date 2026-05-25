@@ -1,100 +1,85 @@
-#   GameManager
 extends Node
 
-var piso_actual :int = 0
-var elementos : Array[String] = ["caldera1", "caldera2"]
-var dias_array : Array[int] = [91,81,72,63,52,43,34,25,17,9]
-var activos : Array[String]
-var descarga = true
-var reparando = false
-var jugador_en_elemeto = ""
-var activo = ""
-var reparar = false
-var contra_barra = false
-var juego_iniciado = true
-var juego_pausado = false
+var floor := 0
+var day := 92
+var game_over := false
+var won := false
+var paused := false
+
+var player_zone: String = ""
+var broken_boiler: String = ""
+var leaking_techo: String = ""
+var drain_active := true
+
 var img_pausa: ColorRect
 var img_caldera1: TextureRect
 var img_caldera2: TextureRect
-var game_over := false
-var gana = false
-var dia = 92
-var personaje_puede_reparar = false
-var hay_caldera_rota = false
-var caldera_rota = ""
+
+var _boiler_break_days: Array[int] = [91, 81, 72, 63, 52, 43, 34, 25, 17, 9]
+var _days_with_boiler_break: Array[int] = []
 
 
 func _ready() -> void:
 	if SoundManager.estado_musica:
 		SoundManager.reproducir_musica()
-		
-	img_pausa = get_tree().current_scene.get_node("img_pausa")
-	img_caldera1 = get_tree().current_scene.get_node("caldera1")
-	img_caldera2 = get_tree().current_scene.get_node("caldera2")
-		
+
+
 func _process(delta: float) -> void:
-	if not game_over:
-		if reparando:
-			elementos.find(jugador_en_elemeto)
-			
-		if dias_array.has(dia):
-			if hay_caldera_rota:
-				game_over = true
-			romper_caldera()
-	
-	else:
-		game_over_()
-		
-func romper_caldera() -> void:
-	if juego_iniciado and not game_over:
-		personaje_puede_reparar = true
-		while true:
-			await get_tree().create_timer(5.0).timeout
-			if reparar:
-				continue
-				
-			var caldera = randi_range(0, 1)
-			caldera_rota = elementos[caldera]
-			activos.append(activo)
-			reparar = true
-			hay_caldera_rota = true
+	if game_over:
+		return
 
-			SoundManager.reproducir_caldera()
+	if _boiler_break_days.has(day) and not _days_with_boiler_break.has(day):
+		if broken_boiler != "":
+			game_over = true
+		else:
+			_break_boiler()
 
-func _on_caldera_se_rompe():
-	reparar = true
-	
+
+func _break_boiler() -> void:
+	var caldera = randi_range(0, 1)
+	broken_boiler = ["caldera1", "caldera2"][caldera]
+	_days_with_boiler_break.append(day)
+	drain_active = true
+	SoundManager.reproducir_caldera()
+
+
+func _buscar_img_pausa():
+	var escena = get_tree().current_scene
+	if not escena:
+		return
+	if img_pausa == null and escena.has_node("img_pausa"):
+		img_pausa = escena.get_node("img_pausa")
+	if img_caldera1 == null and escena.has_node("caldera1"):
+		img_caldera1 = escena.get_node("caldera1")
+	if img_caldera2 == null and escena.has_node("caldera2"):
+		img_caldera2 = escena.get_node("caldera2")
+
+
 func toggle_pause():
-	juego_pausado = !juego_pausado
-	get_tree().paused = juego_pausado
-	if juego_pausado:
+	paused = !paused
+	get_tree().paused = paused
+	if paused:
 		SoundManager.player_musica.volume_db = -30
-		if img_pausa == null:
-			img_pausa = get_tree().current_scene.get_node("img_pausa")
-		img_pausa.visible = true
-		if img_caldera1 == null:
-			img_caldera1 = get_tree().current_scene.get_node("caldera1")
+		_buscar_img_pausa()
+		if img_pausa:
+			img_pausa.visible = true
+		if img_caldera1:
 			img_caldera1.visible = false
-		if img_caldera2 == null:
-			img_caldera2 = get_tree().current_scene.get_node("caldera2")
+		if img_caldera2:
 			img_caldera2.visible = false
-			
+
 	else:
-		img_pausa.visible = false
+		if img_pausa:
+			img_pausa.visible = false
 		SoundManager.player_musica.volume_db = -20
 		SoundManager.detener_caldera()
-	
+
+
 func pause_game():
-	if not juego_pausado:
+	if not paused:
 		toggle_pause()
+
 
 func resume_game():
-	if juego_pausado:
+	if paused:
 		toggle_pause()
-	
-func game_over_():
-	print("perdió")
-
-	
-	
-	

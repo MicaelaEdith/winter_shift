@@ -1,11 +1,11 @@
-[gd_scene load_steps=82 format=3 uid="uid://cfh8mtjwfyvqc"]
+[gd_scene format=3 uid="uid://cfh8mtjwfyvqc"]
 
 [ext_resource type="Texture2D" uid="uid://bqbnmq2nay5mk" path="res://assets/fondos/pantallabase.png" id="1_3c8yq"]
 [ext_resource type="Script" uid="uid://8gqqa6s0vfaw" path="res://scripts/personaje/personaje.gd" id="2_0kxa1"]
-[ext_resource type="Texture2D" uid="uid://be80biux0acsp" path="res://assets/fondos/casa-05.png" id="2_3c8yq"]
 [ext_resource type="Texture2D" uid="uid://03eoyhdsnwwb" path="res://assets/fondos/Copos.png" id="2_ltvhs"]
 [ext_resource type="Script" uid="uid://br7a600o2i36j" path="res://scripts/elementos/barra.gd" id="3_68mvh"]
 [ext_resource type="Script" uid="uid://du3dn8kv5frqp" path="res://scripts/btns/btn_musica_fx.gd" id="3_a8p2b"]
+[ext_resource type="Texture2D" uid="uid://cen00isb20apb" path="res://assets/fondos/main.png" id="3_ltvhs"]
 [ext_resource type="Script" uid="uid://bxv4rrh5fvdsu" path="res://scripts/elementos/caldera.gd" id="4_lyxkq"]
 [ext_resource type="Texture2D" uid="uid://bvs8ty0cg3c0s" path="res://assets/personaje/personaje_camina.png" id="4_ueiap"]
 [ext_resource type="Texture2D" uid="uid://d3ft4bqic2u3p" path="res://assets/personaje/personaje_idle.png" id="5_jwie6"]
@@ -225,41 +225,37 @@ size = Vector2(28.4512, 101.95)
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_26pgj"]
 size = Vector2(37.0982, 39.9842)
 
-[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_dg7ii"]
-
-[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_woaio"]
-
-[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_7an46"]
-
-[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_acisx"]
-
-[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_a5wrc"]
-
-[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_ueiap"]
-
-[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_ymkly"]
-
-[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_jwie6"]
-
-[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_s4hgp"]
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_rd5dn"]
 
 [sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_r01y2"]
 
-[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_rd5dn"]
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_s4hgp"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_jwie6"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_ymkly"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_ueiap"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_a5wrc"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_acisx"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_7an46"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_woaio"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_dg7ii"]
 
 [sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_88j14"]
 
-[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_f1j2c"]
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_yqr1d"]
 
-[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_3c8yq"]
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_c2nrx"]
 
-[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_hrygr"]
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_v4ejg"]
 
-[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_8qufa"]
-
-[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_1equp"]
-
-[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_jq2gp"]
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_ltvhs"]
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_s7y03"]
 bg_color = Color(0.6, 0.6, 0.6, 0.32549)
@@ -269,17 +265,21 @@ corner_radius_bottom_right = 60
 corner_radius_bottom_left = 60
 corner_detail = 20
 
-[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_ltvhs"]
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_jq2gp"]
 
-[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_v4ejg"]
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_1equp"]
 
-[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_c2nrx"]
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_8qufa"]
 
-[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_yqr1d"]
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_hrygr"]
 
-[node name="main" type="Node2D"]
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_3c8yq"]
 
-[node name="fondo_ciudad" type="TextureRect" parent="."]
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_f1j2c"]
+
+[node name="main" type="Node2D" unique_id=1493033000]
+
+[node name="fondo_ciudad" type="TextureRect" parent="." unique_id=769231751]
 offset_left = -6.0
 offset_top = -7.0
 offset_right = 34.0
@@ -288,7 +288,7 @@ scale = Vector2(28.9491, 16.363)
 texture = ExtResource("1_3c8yq")
 expand_mode = 1
 
-[node name="TextureRect" type="TextureRect" parent="."]
+[node name="TextureRect" type="TextureRect" parent="." unique_id=768163114]
 offset_left = -5.00002
 offset_top = -3.0
 offset_right = 7995.0
@@ -296,21 +296,21 @@ offset_bottom = 4497.0
 scale = Vector2(0.145494, 0.144336)
 texture = ExtResource("2_ltvhs")
 
-[node name="fondo" type="TextureRect" parent="."]
+[node name="fondo" type="TextureRect" parent="." unique_id=1319995342]
 offset_left = 5.0
 offset_top = 12.0
 offset_right = 786.0
 offset_bottom = 180.0
 scale = Vector2(1.42285, 3.75516)
-texture = ExtResource("2_3c8yq")
+texture = ExtResource("3_ltvhs")
 expand_mode = 1
 
-[node name="estructura" type="Node" parent="."]
+[node name="estructura" type="Node" parent="." unique_id=1556829220]
 
-[node name="suelo" type="StaticBody2D" parent="estructura"]
+[node name="suelo" type="StaticBody2D" parent="estructura" unique_id=1844992203]
 position = Vector2(1, 47)
 
-[node name="ColorRect" type="ColorRect" parent="estructura/suelo"]
+[node name="ColorRect" type="ColorRect" parent="estructura/suelo" unique_id=574509535]
 offset_left = -12.0
 offset_top = 585.0
 offset_right = 28.0
@@ -318,96 +318,96 @@ offset_bottom = 625.0
 scale = Vector2(29.3283, 1.88728)
 color = Color(0.0431373, 0.0431373, 0.0431373, 1)
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="estructura/suelo"]
+[node name="CollisionShape2D" type="CollisionShape2D" parent="estructura/suelo" unique_id=358942133]
 visible = false
 position = Vector2(575.5, 618)
 scale = Vector2(3.99865, 3.0514)
 shape = SubResource("RectangleShape2D_d7u15")
 
-[node name="piso1" type="StaticBody2D" parent="estructura"]
+[node name="piso1" type="StaticBody2D" parent="estructura" unique_id=1395908999]
 position = Vector2(330, 512)
 scale = Vector2(12.0331, 0.291519)
 
-[node name="ColorRect" type="ColorRect" parent="estructura/piso1"]
+[node name="ColorRect" type="ColorRect" parent="estructura/piso1" unique_id=1890732443]
 offset_right = 40.0
 offset_bottom = 40.0
 color = Color(1, 1, 1, 0)
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="estructura/piso1"]
+[node name="CollisionShape2D" type="CollisionShape2D" parent="estructura/piso1" unique_id=29173152]
 position = Vector2(20.042, 18.9396)
 shape = SubResource("RectangleShape2D_dkga6")
 
-[node name="piso2" type="StaticBody2D" parent="estructura"]
+[node name="piso2" type="StaticBody2D" parent="estructura" unique_id=290030768]
 position = Vector2(337, 382)
 rotation = -0.0051385
 scale = Vector2(12.0331, 0.291519)
 
-[node name="ColorRect" type="ColorRect" parent="estructura/piso2"]
+[node name="ColorRect" type="ColorRect" parent="estructura/piso2" unique_id=2061475055]
 offset_right = 40.0
 offset_bottom = 40.0
 color = Color(1, 1, 1, 0)
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="estructura/piso2"]
+[node name="CollisionShape2D" type="CollisionShape2D" parent="estructura/piso2" unique_id=1998810828]
 position = Vector2(20.042, 18.9396)
 shape = SubResource("RectangleShape2D_dkga6")
 
-[node name="piso3" type="StaticBody2D" parent="estructura"]
+[node name="piso3" type="StaticBody2D" parent="estructura" unique_id=102681991]
 position = Vector2(331, 248)
 rotation = 0.00691172
 scale = Vector2(12.0331, 0.291519)
 
-[node name="ColorRect" type="ColorRect" parent="estructura/piso3"]
+[node name="ColorRect" type="ColorRect" parent="estructura/piso3" unique_id=913261095]
 offset_right = 40.0
 offset_bottom = 40.0
 color = Color(1, 1, 1, 0)
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="estructura/piso3"]
+[node name="CollisionShape2D" type="CollisionShape2D" parent="estructura/piso3" unique_id=734721972]
 position = Vector2(19.5885, 35.4996)
 shape = SubResource("RectangleShape2D_dkga6")
 
-[node name="piso4" type="StaticBody2D" parent="estructura"]
+[node name="piso4" type="StaticBody2D" parent="estructura" unique_id=1740360681]
 position = Vector2(339, 124)
 rotation = -0.040915
 scale = Vector2(12.0331, 0.291519)
 
-[node name="ColorRect" type="ColorRect" parent="estructura/piso4"]
+[node name="ColorRect" type="ColorRect" parent="estructura/piso4" unique_id=1466902187]
 offset_right = 40.0
 offset_bottom = 40.0
 color = Color(1, 1, 1, 0)
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="estructura/piso4"]
+[node name="CollisionShape2D" type="CollisionShape2D" parent="estructura/piso4" unique_id=390086342]
 position = Vector2(20.042, 18.9396)
 shape = SubResource("RectangleShape2D_dkga6")
 
-[node name="pared1" type="StaticBody2D" parent="estructura"]
+[node name="pared1" type="StaticBody2D" parent="estructura" unique_id=1289924571]
 position = Vector2(326, 14)
 scale = Vector2(0.539505, 15.2765)
 
-[node name="ColorRect" type="ColorRect" parent="estructura/pared1"]
+[node name="ColorRect" type="ColorRect" parent="estructura/pared1" unique_id=1755030237]
 offset_right = 40.0
 offset_bottom = 40.0
 color = Color(1, 1, 1, 0)
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="estructura/pared1"]
+[node name="CollisionShape2D" type="CollisionShape2D" parent="estructura/pared1" unique_id=441639639]
 position = Vector2(19.4533, 20.0555)
 scale = Vector2(1.24569, 1)
 shape = SubResource("RectangleShape2D_jumxm")
 
-[node name="pared2" type="StaticBody2D" parent="estructura"]
+[node name="pared2" type="StaticBody2D" parent="estructura" unique_id=1903262788]
 position = Vector2(794, 14)
 scale = Vector2(0.539505, 15.2765)
 
-[node name="ColorRect" type="ColorRect" parent="estructura/pared2"]
+[node name="ColorRect" type="ColorRect" parent="estructura/pared2" unique_id=26759910]
 offset_right = 40.0
 offset_bottom = 40.0
 color = Color(1, 1, 1, 0)
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="estructura/pared2"]
+[node name="CollisionShape2D" type="CollisionShape2D" parent="estructura/pared2" unique_id=1112562769]
 position = Vector2(19.4533, 20.0555)
 scale = Vector2(1.24569, 1)
 shape = SubResource("RectangleShape2D_jumxm")
 
-[node name="desperfecto_electrico2" type="TextureRect" parent="."]
+[node name="desperfecto_electrico2" type="TextureRect" parent="." unique_id=849823591]
 visible = false
 offset_left = 677.0
 offset_top = 429.0
@@ -416,7 +416,7 @@ offset_bottom = 869.0
 scale = Vector2(0.200954, 0.16693)
 texture = ExtResource("8_jq2gp")
 
-[node name="desperfecto_electrico1" type="TextureRect" parent="."]
+[node name="desperfecto_electrico1" type="TextureRect" parent="." unique_id=951017041]
 visible = false
 offset_left = 340.0
 offset_top = 282.0
@@ -425,7 +425,7 @@ offset_bottom = 722.0
 scale = Vector2(0.19183, 0.182581)
 texture = ExtResource("8_jq2gp")
 
-[node name="viento_1" type="TextureRect" parent="."]
+[node name="viento_1" type="TextureRect" parent="." unique_id=1138901459]
 visible = false
 offset_left = 683.0
 offset_top = 144.0
@@ -434,7 +434,7 @@ offset_bottom = 584.0
 scale = Vector2(0.1573, 0.227389)
 texture = ExtResource("8_1equp")
 
-[node name="viento_2" type="TextureRect" parent="."]
+[node name="viento_2" type="TextureRect" parent="." unique_id=426915601]
 visible = false
 offset_left = 396.0
 offset_top = 403.0
@@ -443,14 +443,14 @@ offset_bottom = 843.0
 scale = Vector2(0.169136, 0.201097)
 texture = ExtResource("6_yqr1d")
 
-[node name="caldera1" type="TextureRect" parent="."]
+[node name="caldera1" type="TextureRect" parent="." unique_id=1371002758]
 offset_left = 366.0
 offset_top = 557.0
 offset_right = 406.0
 offset_bottom = 617.0
 scale = Vector2(2.82416, 0.902558)
 
-[node name="barra_azul" type="ColorRect" parent="caldera1" node_paths=PackedStringArray("barra")]
+[node name="barra_azul" type="ColorRect" parent="caldera1" unique_id=527693490 node_paths=PackedStringArray("barra")]
 layout_mode = 0
 offset_left = -7.43584
 offset_top = 1.10796
@@ -464,33 +464,32 @@ velocidad_carga = 3
 barra = NodePath("barra_roja")
 elemento = "caldera1"
 
-[node name="barra_roja" type="ColorRect" parent="caldera1/barra_azul"]
+[node name="barra_roja" type="ColorRect" parent="caldera1/barra_azul" unique_id=924423851]
 layout_mode = 0
 offset_right = 40.0
 offset_bottom = 40.0
 scale = Vector2(0.996604, 1.00099)
 color = Color(0.748273, 0.0346736, 0.215316, 1)
 
-[node name="Area2D" type="Area2D" parent="caldera1" node_paths=PackedStringArray("barra", "personaje")]
+[node name="Area2D" type="Area2D" parent="caldera1" unique_id=2144082521 node_paths=PackedStringArray("barra")]
 position = Vector2(-8.14401, 11.0796)
 scale = Vector2(0.816058, 1.09229)
 script = ExtResource("4_lyxkq")
 elemento = "caldera1"
 barra = NodePath("../barra_azul")
-personaje = NodePath("../../personaje")
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="caldera1/Area2D"]
+[node name="CollisionShape2D" type="CollisionShape2D" parent="caldera1/Area2D" unique_id=1098363332]
 position = Vector2(25.9513, 26.866)
 shape = SubResource("RectangleShape2D_68mvh")
 
-[node name="caldera2" type="TextureRect" parent="."]
+[node name="caldera2" type="TextureRect" parent="." unique_id=449109420]
 offset_left = 672.0
 offset_top = 556.0
 offset_right = 712.0
 offset_bottom = 616.0
 scale = Vector2(2.82416, 0.902558)
 
-[node name="barra_azul" type="ColorRect" parent="caldera2" node_paths=PackedStringArray("barra")]
+[node name="barra_azul" type="ColorRect" parent="caldera2" unique_id=732889948 node_paths=PackedStringArray("barra")]
 layout_mode = 0
 offset_left = 40.72
 offset_top = 2.21593
@@ -504,26 +503,25 @@ velocidad_carga = 3
 barra = NodePath("barra_roja")
 elemento = "caldera2"
 
-[node name="barra_roja" type="ColorRect" parent="caldera2/barra_azul"]
+[node name="barra_roja" type="ColorRect" parent="caldera2/barra_azul" unique_id=1955574892]
 layout_mode = 0
 offset_right = 40.0
 offset_bottom = 40.0
 scale = Vector2(0.996604, 1.00099)
 color = Color(0.748273, 0.0346736, 0.215316, 1)
 
-[node name="Area2D" type="Area2D" parent="caldera2" node_paths=PackedStringArray("barra", "personaje")]
+[node name="Area2D" type="Area2D" parent="caldera2" unique_id=2025638470 node_paths=PackedStringArray("barra")]
 position = Vector2(9.20627, 17.7274)
 scale = Vector2(0.683651, 0.992517)
 script = ExtResource("4_lyxkq")
 elemento = "caldera2"
 barra = NodePath("../barra_azul")
-personaje = NodePath("../../personaje")
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="caldera2/Area2D"]
+[node name="CollisionShape2D" type="CollisionShape2D" parent="caldera2/Area2D" unique_id=883208930]
 position = Vector2(17.9911, 29.9009)
 shape = SubResource("RectangleShape2D_68mvh")
 
-[node name="personaje" type="CharacterBody2D" parent="." node_paths=PackedStringArray("marca_pb", "marca_p1", "marca_p2", "marca_p3", "marca_p4", "luz_pb", "luz_p1", "luz_p2", "luz_p3", "luz_p4", "caldera1", "caldera2")]
+[node name="personaje" type="CharacterBody2D" parent="." unique_id=2077992450 node_paths=PackedStringArray("marca_pb", "marca_p1", "marca_p2", "marca_p3", "marca_p4", "luz_pb", "luz_p1", "luz_p2", "luz_p3", "luz_p4", "caldera1", "caldera2")]
 position = Vector2(476, 548)
 scale = Vector2(0.919788, 0.919788)
 script = ExtResource("2_0kxa1")
@@ -540,13 +538,13 @@ luz_p4 = NodePath("../ascensor/luz_p4")
 caldera1 = NodePath("../caldera1/Area2D")
 caldera2 = NodePath("../caldera2/Area2D")
 
-[node name="ColorRect" type="ColorRect" parent="personaje"]
+[node name="ColorRect" type="ColorRect" parent="personaje" unique_id=652199730]
 offset_right = 40.0
 offset_bottom = 40.0
 scale = Vector2(0.869206, 2.08666)
 color = Color(1, 0.427451, 1, 0)
 
-[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="personaje/ColorRect"]
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="personaje/ColorRect" unique_id=130597715]
 position = Vector2(20.3637, 17.5711)
 scale = Vector2(0.200091, 0.0833488)
 sprite_frames = SubResource("SpriteFrames_f1j2c")
@@ -554,12 +552,12 @@ animation = &"reparando_techo"
 frame = 5
 frame_progress = 0.386321
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="personaje"]
+[node name="CollisionShape2D" type="CollisionShape2D" parent="personaje" unique_id=1242832022]
 position = Vector2(18, 40)
 scale = Vector2(0.843549, 0.843549)
 shape = SubResource("RectangleShape2D_0kxa1")
 
-[node name="bordes" type="TextureRect" parent="."]
+[node name="bordes" type="TextureRect" parent="." unique_id=854502849]
 offset_left = 252.0
 offset_top = 3.0
 offset_right = 292.0
@@ -568,7 +566,7 @@ scale = Vector2(15.4714, 16.4164)
 texture = ExtResource("10_hrygr")
 expand_mode = 1
 
-[node name="gotera_1" type="TextureRect" parent="."]
+[node name="gotera_1" type="TextureRect" parent="." unique_id=1816150753]
 visible = false
 offset_left = 434.0
 offset_top = 109.0
@@ -577,7 +575,7 @@ offset_bottom = 549.0
 scale = Vector2(0.138339, 0.126084)
 texture = ExtResource("9_8qufa")
 
-[node name="Area2D3" type="Area2D" parent="gotera_1" node_paths=PackedStringArray("barra", "personaje")]
+[node name="Area2D3" type="Area2D" parent="gotera_1" unique_id=621358674 node_paths=PackedStringArray("barra")]
 position = Vector2(86.7434, -467.942)
 rotation = -0.0448867
 scale = Vector2(4.97491, 12.9916)
@@ -585,13 +583,12 @@ skew = 0.00759256
 script = ExtResource("4_lyxkq")
 elemento = "techo_1"
 barra = NodePath("../../caldera1/barra_azul")
-personaje = NodePath("../../personaje")
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="gotera_1/Area2D3"]
+[node name="CollisionShape2D" type="CollisionShape2D" parent="gotera_1/Area2D3" unique_id=436482590]
 position = Vector2(25.9513, 26.866)
 shape = SubResource("RectangleShape2D_68mvh")
 
-[node name="barra_gota_3" type="ColorRect" parent="gotera_1" node_paths=PackedStringArray("barra")]
+[node name="barra_gota_3" type="ColorRect" parent="gotera_1" unique_id=1737057022 node_paths=PackedStringArray("barra")]
 visible = false
 layout_mode = 0
 offset_left = 1539.69
@@ -605,16 +602,16 @@ script = ExtResource("3_68mvh")
 total_time = 10.0
 velocidad_carga = 3
 barra = NodePath("barra_roja")
-elemento = "techo_2"
+elemento = "techo_1"
 
-[node name="barra_roja" type="ColorRect" parent="gotera_1/barra_gota_3"]
+[node name="barra_roja" type="ColorRect" parent="gotera_1/barra_gota_3" unique_id=719179125]
 layout_mode = 0
 offset_right = 40.0
 offset_bottom = 40.0
 scale = Vector2(0.996604, 1.00099)
 color = Color(0.748273, 0.0346736, 0.215316, 1)
 
-[node name="gotera_2" type="TextureRect" parent="."]
+[node name="gotera_2" type="TextureRect" parent="." unique_id=1023067418]
 visible = false
 offset_left = 637.0
 offset_top = 95.0
@@ -623,7 +620,7 @@ offset_bottom = 535.0
 scale = Vector2(0.153481, 0.13949)
 texture = ExtResource("10_1equp")
 
-[node name="Area2D2" type="Area2D" parent="gotera_2" node_paths=PackedStringArray("barra", "personaje")]
+[node name="Area2D2" type="Area2D" parent="gotera_2" unique_id=1655177288 node_paths=PackedStringArray("barra")]
 position = Vector2(104.247, -387.125)
 rotation = -0.0450135
 scale = Vector2(4.48412, 11.743)
@@ -631,13 +628,12 @@ skew = 0.00782454
 script = ExtResource("4_lyxkq")
 elemento = "techo_2"
 barra = NodePath("../../caldera1/barra_azul")
-personaje = NodePath("../../personaje")
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="gotera_2/Area2D2"]
+[node name="CollisionShape2D" type="CollisionShape2D" parent="gotera_2/Area2D2" unique_id=1122409263]
 position = Vector2(25.9513, 26.866)
 shape = SubResource("RectangleShape2D_68mvh")
 
-[node name="barra_gota_2" type="ColorRect" parent="gotera_2" node_paths=PackedStringArray("barra")]
+[node name="barra_gota_2" type="ColorRect" parent="gotera_2" unique_id=2000371073 node_paths=PackedStringArray("barra")]
 visible = false
 layout_mode = 0
 offset_left = 65.1494
@@ -653,18 +649,18 @@ velocidad_carga = 3
 barra = NodePath("barra_roja")
 elemento = "techo_2"
 
-[node name="barra_roja" type="ColorRect" parent="gotera_2/barra_gota_2"]
+[node name="barra_roja" type="ColorRect" parent="gotera_2/barra_gota_2" unique_id=854004816]
 layout_mode = 0
 offset_right = 40.0
 offset_bottom = 40.0
 scale = Vector2(0.996604, 1.00099)
 color = Color(0.748273, 0.0346736, 0.215316, 1)
 
-[node name="ascensor" type="Area2D" parent="."]
+[node name="ascensor" type="Area2D" parent="." unique_id=1854183016]
 position = Vector2(543, 19)
 scale = Vector2(1.54576, 14.7953)
 
-[node name="ColorRect" type="ColorRect" parent="ascensor"]
+[node name="ColorRect" type="ColorRect" parent="ascensor" unique_id=26198196]
 offset_left = -1.94079
 offset_top = 0.743479
 offset_right = 38.0592
@@ -672,27 +668,27 @@ offset_bottom = 40.7435
 scale = Vector2(1.08706, 1.00696)
 color = Color(0.686275, 0.686275, 0.686275, 0)
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="ascensor"]
+[node name="CollisionShape2D" type="CollisionShape2D" parent="ascensor" unique_id=419691757]
 visible = false
 position = Vector2(19.8926, 20.0522)
 shape = SubResource("RectangleShape2D_26pgj")
 
-[node name="marca_pb" type="Marker2D" parent="ascensor"]
+[node name="marca_pb" type="Marker2D" parent="ascensor" unique_id=330646881]
 position = Vector2(19.4079, 36.9712)
 
-[node name="marca_1" type="Marker2D" parent="ascensor"]
+[node name="marca_1" type="Marker2D" parent="ascensor" unique_id=1421470724]
 position = Vector2(23.2895, 28.9281)
 
-[node name="marca_2" type="Marker2D" parent="ascensor"]
+[node name="marca_2" type="Marker2D" parent="ascensor" unique_id=762521838]
 position = Vector2(22.6426, 20.3443)
 
-[node name="marca_3" type="Marker2D" parent="ascensor"]
+[node name="marca_3" type="Marker2D" parent="ascensor" unique_id=1868310655]
 position = Vector2(21.3487, 11.4901)
 
-[node name="marca_4" type="Marker2D" parent="ascensor"]
+[node name="marca_4" type="Marker2D" parent="ascensor" unique_id=285922928]
 position = Vector2(21.9957, 2.83874)
 
-[node name="luz_pb" type="ColorRect" parent="ascensor"]
+[node name="luz_pb" type="ColorRect" parent="ascensor" unique_id=111423312]
 offset_left = 12.9386
 offset_top = 34.2001
 offset_right = 52.9386
@@ -700,7 +696,7 @@ offset_bottom = 74.2001
 scale = Vector2(0.339875, 0.00752528)
 color = Color(0.956863, 0.952941, 0.807843, 0)
 
-[node name="TextureRect" type="TextureRect" parent="ascensor/luz_pb"]
+[node name="TextureRect" type="TextureRect" parent="ascensor/luz_pb" unique_id=1604740548]
 layout_mode = 0
 offset_left = -17.1309
 offset_top = -80.8355
@@ -709,7 +705,7 @@ offset_bottom = 91.1645
 scale = Vector2(0.241839, 1.3953)
 texture = ExtResource("10_s4hgp")
 
-[node name="luz_p1" type="ColorRect" parent="ascensor"]
+[node name="luz_p1" type="ColorRect" parent="ascensor" unique_id=549351857]
 visible = false
 offset_left = 14.2325
 offset_top = 24.7376
@@ -718,7 +714,7 @@ offset_bottom = 64.7376
 scale = Vector2(0.339875, 0.00752528)
 color = Color(0.956863, 0.952941, 0.807843, 0)
 
-[node name="TextureRect" type="TextureRect" parent="ascensor/luz_p1"]
+[node name="TextureRect" type="TextureRect" parent="ascensor/luz_p1" unique_id=1054157037]
 layout_mode = 0
 offset_left = -17.1309
 offset_top = -80.8355
@@ -727,7 +723,7 @@ offset_bottom = 91.1645
 scale = Vector2(0.241839, 1.3953)
 texture = ExtResource("10_s4hgp")
 
-[node name="luz_p2" type="ColorRect" parent="ascensor"]
+[node name="luz_p2" type="ColorRect" parent="ascensor" unique_id=1910376341]
 visible = false
 offset_left = 14.2325
 offset_top = 16.4917
@@ -736,7 +732,7 @@ offset_bottom = 56.4917
 scale = Vector2(0.339875, 0.00752528)
 color = Color(0.956863, 0.952941, 0.807843, 0)
 
-[node name="TextureRect" type="TextureRect" parent="ascensor/luz_p2"]
+[node name="TextureRect" type="TextureRect" parent="ascensor/luz_p2" unique_id=1222410761]
 layout_mode = 0
 offset_left = -17.1309
 offset_top = -80.8355
@@ -745,7 +741,7 @@ offset_bottom = 91.1645
 scale = Vector2(0.241839, 1.3953)
 texture = ExtResource("10_s4hgp")
 
-[node name="luz_p3" type="ColorRect" parent="ascensor"]
+[node name="luz_p3" type="ColorRect" parent="ascensor" unique_id=1082554241]
 visible = false
 offset_left = 14.2325
 offset_top = 8.44863
@@ -754,7 +750,7 @@ offset_bottom = 48.4486
 scale = Vector2(0.339875, 0.00752528)
 color = Color(0.956863, 0.952941, 0.807843, 0)
 
-[node name="TextureRect" type="TextureRect" parent="ascensor/luz_p3"]
+[node name="TextureRect" type="TextureRect" parent="ascensor/luz_p3" unique_id=674319580]
 layout_mode = 0
 offset_left = -17.1309
 offset_top = -80.8355
@@ -763,7 +759,7 @@ offset_bottom = 91.1645
 scale = Vector2(0.241839, 1.3953)
 texture = ExtResource("10_s4hgp")
 
-[node name="terraza" type="ColorRect" parent="ascensor"]
+[node name="terraza" type="ColorRect" parent="ascensor" unique_id=1897498320]
 offset_left = -1.29387
 offset_top = 0.878657
 offset_right = 38.7061
@@ -772,7 +768,7 @@ rotation = -0.00504223
 scale = Vector2(1.07422, 0.140075)
 color = Color(0.47451, 0.478431, 0.478431, 1)
 
-[node name="luz_p4" type="ColorRect" parent="ascensor"]
+[node name="luz_p4" type="ColorRect" parent="ascensor" unique_id=531202470]
 visible = false
 offset_left = 14.8794
 offset_top = 1.2166
@@ -781,7 +777,7 @@ offset_bottom = 41.2166
 scale = Vector2(0.339875, 0.00752528)
 color = Color(0.956863, 0.952941, 0.807843, 0)
 
-[node name="TextureRect" type="TextureRect" parent="ascensor/luz_p4"]
+[node name="TextureRect" type="TextureRect" parent="ascensor/luz_p4" unique_id=1706505020]
 layout_mode = 0
 offset_left = -17.1309
 offset_top = -80.8355
@@ -790,7 +786,7 @@ offset_bottom = 91.1645
 scale = Vector2(0.241839, 1.3953)
 texture = ExtResource("10_s4hgp")
 
-[node name="TextureRect" type="TextureRect" parent="ascensor"]
+[node name="TextureRect" type="TextureRect" parent="ascensor" unique_id=51212844]
 offset_left = -168.849
 offset_top = 2.43321
 offset_right = 3867.15
@@ -798,38 +794,38 @@ offset_bottom = 614.433
 scale = Vector2(0.0897661, 0.00929435)
 texture = ExtResource("7_7an46")
 
-[node name="img_pausa" type="ColorRect" parent="."]
+[node name="img_pausa" type="ColorRect" parent="." unique_id=48754526]
 visible = false
 offset_right = 1164.0
 offset_bottom = 710.0
 color = Color(0.0169952, 0.0332499, 0.0653198, 0.960784)
 
-[node name="UI" type="CanvasLayer" parent="."]
+[node name="UI" type="CanvasLayer" parent="." unique_id=2094452829]
 
-[node name="botones" type="CanvasGroup" parent="UI"]
+[node name="botones" type="CanvasGroup" parent="UI" unique_id=742908875]
 
-[node name="btn_musica" type="Button" parent="UI/botones"]
+[node name="btn_musica" type="Button" parent="UI/botones" unique_id=385723689]
 offset_left = 978.0
 offset_top = 24.0
 offset_right = 986.0
 offset_bottom = 32.0
 scale = Vector2(5.22041, 5.171)
-theme_override_styles/focus = SubResource("StyleBoxEmpty_dg7ii")
-theme_override_styles/disabled_mirrored = SubResource("StyleBoxEmpty_woaio")
-theme_override_styles/disabled = SubResource("StyleBoxEmpty_7an46")
-theme_override_styles/hover_pressed_mirrored = SubResource("StyleBoxEmpty_acisx")
-theme_override_styles/hover_pressed = SubResource("StyleBoxEmpty_a5wrc")
-theme_override_styles/hover_mirrored = SubResource("StyleBoxEmpty_ueiap")
-theme_override_styles/hover = SubResource("StyleBoxEmpty_ymkly")
-theme_override_styles/pressed_mirrored = SubResource("StyleBoxEmpty_jwie6")
-theme_override_styles/pressed = SubResource("StyleBoxEmpty_s4hgp")
-theme_override_styles/normal_mirrored = SubResource("StyleBoxEmpty_r01y2")
 theme_override_styles/normal = SubResource("StyleBoxEmpty_rd5dn")
+theme_override_styles/normal_mirrored = SubResource("StyleBoxEmpty_r01y2")
+theme_override_styles/pressed = SubResource("StyleBoxEmpty_s4hgp")
+theme_override_styles/pressed_mirrored = SubResource("StyleBoxEmpty_jwie6")
+theme_override_styles/hover = SubResource("StyleBoxEmpty_ymkly")
+theme_override_styles/hover_mirrored = SubResource("StyleBoxEmpty_ueiap")
+theme_override_styles/hover_pressed = SubResource("StyleBoxEmpty_a5wrc")
+theme_override_styles/hover_pressed_mirrored = SubResource("StyleBoxEmpty_acisx")
+theme_override_styles/disabled = SubResource("StyleBoxEmpty_7an46")
+theme_override_styles/disabled_mirrored = SubResource("StyleBoxEmpty_woaio")
+theme_override_styles/focus = SubResource("StyleBoxEmpty_dg7ii")
 script = ExtResource("3_a8p2b")
 tipo_boton = "musica"
 metadata/_edit_use_anchors_ = true
 
-[node name="TextureRect" type="TextureRect" parent="UI/botones/btn_musica"]
+[node name="TextureRect" type="TextureRect" parent="UI/botones/btn_musica" unique_id=282018281]
 layout_mode = 1
 anchors_preset = -1
 anchor_left = -0.0841386
@@ -843,28 +839,28 @@ texture = ExtResource("12_jwie6")
 expand_mode = 1
 metadata/_edit_use_anchors_ = true
 
-[node name="btn_fx" type="Button" parent="UI/botones"]
+[node name="btn_fx" type="Button" parent="UI/botones" unique_id=524943078]
 offset_left = 1036.0
 offset_top = 25.0
 offset_right = 1044.0
 offset_bottom = 33.0
 scale = Vector2(4.95366, 5.03176)
-theme_override_styles/focus = SubResource("StyleBoxEmpty_dg7ii")
-theme_override_styles/disabled_mirrored = SubResource("StyleBoxEmpty_woaio")
-theme_override_styles/disabled = SubResource("StyleBoxEmpty_7an46")
-theme_override_styles/hover_pressed_mirrored = SubResource("StyleBoxEmpty_acisx")
-theme_override_styles/hover_pressed = SubResource("StyleBoxEmpty_a5wrc")
-theme_override_styles/hover_mirrored = SubResource("StyleBoxEmpty_ueiap")
-theme_override_styles/hover = SubResource("StyleBoxEmpty_ymkly")
-theme_override_styles/pressed_mirrored = SubResource("StyleBoxEmpty_jwie6")
-theme_override_styles/pressed = SubResource("StyleBoxEmpty_s4hgp")
-theme_override_styles/normal_mirrored = SubResource("StyleBoxEmpty_r01y2")
 theme_override_styles/normal = SubResource("StyleBoxEmpty_rd5dn")
+theme_override_styles/normal_mirrored = SubResource("StyleBoxEmpty_r01y2")
+theme_override_styles/pressed = SubResource("StyleBoxEmpty_s4hgp")
+theme_override_styles/pressed_mirrored = SubResource("StyleBoxEmpty_jwie6")
+theme_override_styles/hover = SubResource("StyleBoxEmpty_ymkly")
+theme_override_styles/hover_mirrored = SubResource("StyleBoxEmpty_ueiap")
+theme_override_styles/hover_pressed = SubResource("StyleBoxEmpty_a5wrc")
+theme_override_styles/hover_pressed_mirrored = SubResource("StyleBoxEmpty_acisx")
+theme_override_styles/disabled = SubResource("StyleBoxEmpty_7an46")
+theme_override_styles/disabled_mirrored = SubResource("StyleBoxEmpty_woaio")
+theme_override_styles/focus = SubResource("StyleBoxEmpty_dg7ii")
 script = ExtResource("3_a8p2b")
 tipo_boton = "efectos"
 metadata/_edit_use_anchors_ = true
 
-[node name="TextureRect" type="TextureRect" parent="UI/botones/btn_fx"]
+[node name="TextureRect" type="TextureRect" parent="UI/botones/btn_fx" unique_id=180298133]
 layout_mode = 0
 offset_right = 40.0
 offset_bottom = 40.0
@@ -872,28 +868,28 @@ scale = Vector2(0.19631, 0.203409)
 texture = ExtResource("13_s4hgp")
 expand_mode = 1
 
-[node name="btn_pausa" type="Button" parent="UI/botones" node_paths=PackedStringArray("contador")]
+[node name="btn_pausa" type="Button" parent="UI/botones" unique_id=1935524541 node_paths=PackedStringArray("contador")]
 offset_left = 1079.0
 offset_top = 25.0
 offset_right = 1087.0
 offset_bottom = 33.0
 scale = Vector2(6.28915, 5.4289)
-theme_override_styles/focus = SubResource("StyleBoxEmpty_dg7ii")
-theme_override_styles/disabled_mirrored = SubResource("StyleBoxEmpty_woaio")
-theme_override_styles/disabled = SubResource("StyleBoxEmpty_7an46")
-theme_override_styles/hover_pressed_mirrored = SubResource("StyleBoxEmpty_acisx")
-theme_override_styles/hover_pressed = SubResource("StyleBoxEmpty_a5wrc")
-theme_override_styles/hover_mirrored = SubResource("StyleBoxEmpty_ueiap")
-theme_override_styles/hover = SubResource("StyleBoxEmpty_ymkly")
-theme_override_styles/pressed_mirrored = SubResource("StyleBoxEmpty_jwie6")
-theme_override_styles/pressed = SubResource("StyleBoxEmpty_s4hgp")
-theme_override_styles/normal_mirrored = SubResource("StyleBoxEmpty_r01y2")
 theme_override_styles/normal = SubResource("StyleBoxEmpty_88j14")
+theme_override_styles/normal_mirrored = SubResource("StyleBoxEmpty_r01y2")
+theme_override_styles/pressed = SubResource("StyleBoxEmpty_s4hgp")
+theme_override_styles/pressed_mirrored = SubResource("StyleBoxEmpty_jwie6")
+theme_override_styles/hover = SubResource("StyleBoxEmpty_ymkly")
+theme_override_styles/hover_mirrored = SubResource("StyleBoxEmpty_ueiap")
+theme_override_styles/hover_pressed = SubResource("StyleBoxEmpty_a5wrc")
+theme_override_styles/hover_pressed_mirrored = SubResource("StyleBoxEmpty_acisx")
+theme_override_styles/disabled = SubResource("StyleBoxEmpty_7an46")
+theme_override_styles/disabled_mirrored = SubResource("StyleBoxEmpty_woaio")
+theme_override_styles/focus = SubResource("StyleBoxEmpty_dg7ii")
 script = ExtResource("11_acisx")
 contador = NodePath("../../contador_dias")
 metadata/_edit_use_anchors_ = true
 
-[node name="TextureRect" type="TextureRect" parent="UI/botones/btn_pausa"]
+[node name="TextureRect" type="TextureRect" parent="UI/botones/btn_pausa" unique_id=990898282]
 layout_mode = 1
 anchors_preset = -1
 anchor_left = -0.134701
@@ -907,7 +903,7 @@ texture = ExtResource("15_r01y2")
 expand_mode = 1
 metadata/_edit_use_anchors_ = true
 
-[node name="contador_dias" type="Label" parent="UI" node_paths=PackedStringArray("img_fondo_youwin", "img_youwin", "img_gameover", "label_dias", "btn_playagain", "botones")]
+[node name="contador_dias" type="Label" parent="UI" unique_id=2107208991 node_paths=PackedStringArray("img_fondo_youwin", "img_youwin", "img_gameover", "label_dias", "btn_playagain", "botones")]
 offset_left = 37.0
 offset_top = 31.0
 offset_right = 199.0
@@ -923,7 +919,7 @@ label_dias = NodePath(".")
 btn_playagain = NodePath("../play_again")
 botones = NodePath("../botones")
 
-[node name="game_over" type="TextureRect" parent="UI"]
+[node name="game_over" type="TextureRect" parent="UI" unique_id=601854414]
 visible = false
 offset_left = -31.0
 offset_top = -7.0
@@ -933,14 +929,14 @@ scale = Vector2(0.622392, 0.656896)
 texture = ExtResource("20_rd5dn")
 expand_mode = 1
 
-[node name="fondo_youwin" type="ColorRect" parent="UI"]
+[node name="fondo_youwin" type="ColorRect" parent="UI" unique_id=1356235645]
 visible = false
 offset_right = 40.0
 offset_bottom = 40.0
 scale = Vector2(29.0331, 16.7871)
 color = Color(1, 1, 1, 0.972549)
 
-[node name="you_win" type="TextureRect" parent="UI"]
+[node name="you_win" type="TextureRect" parent="UI" unique_id=247121261]
 visible = false
 offset_left = 3.0
 offset_right = 1923.0
@@ -949,24 +945,24 @@ scale = Vector2(0.601205, 0.601205)
 texture = ExtResource("21_88j14")
 expand_mode = 1
 
-[node name="play_again" type="Button" parent="UI" node_paths=PackedStringArray("img_fondo_youwin", "img_youwin", "img_gameover", "btn_playagain", "botones", "contador", "personaje", "posicion_inicial_personaje", "luces")]
+[node name="play_again" type="Button" parent="UI" unique_id=140190133 node_paths=PackedStringArray("img_fondo_youwin", "img_youwin", "img_gameover", "btn_playagain", "botones", "contador", "personaje", "posicion_inicial_personaje", "luces")]
 visible = false
 offset_left = 467.0
 offset_top = 523.0
 offset_right = 475.0
 offset_bottom = 531.0
 scale = Vector2(23.9276, 5.54119)
-theme_override_styles/focus = SubResource("StyleBoxEmpty_f1j2c")
-theme_override_styles/disabled_mirrored = SubResource("StyleBoxEmpty_3c8yq")
-theme_override_styles/disabled = SubResource("StyleBoxEmpty_hrygr")
-theme_override_styles/hover_pressed_mirrored = SubResource("StyleBoxEmpty_8qufa")
-theme_override_styles/hover_pressed = SubResource("StyleBoxEmpty_1equp")
-theme_override_styles/hover_mirrored = SubResource("StyleBoxEmpty_jq2gp")
-theme_override_styles/hover = SubResource("StyleBoxFlat_s7y03")
-theme_override_styles/pressed_mirrored = SubResource("StyleBoxEmpty_ltvhs")
-theme_override_styles/pressed = SubResource("StyleBoxEmpty_v4ejg")
-theme_override_styles/normal_mirrored = SubResource("StyleBoxEmpty_c2nrx")
 theme_override_styles/normal = SubResource("StyleBoxEmpty_yqr1d")
+theme_override_styles/normal_mirrored = SubResource("StyleBoxEmpty_c2nrx")
+theme_override_styles/pressed = SubResource("StyleBoxEmpty_v4ejg")
+theme_override_styles/pressed_mirrored = SubResource("StyleBoxEmpty_ltvhs")
+theme_override_styles/hover = SubResource("StyleBoxFlat_s7y03")
+theme_override_styles/hover_mirrored = SubResource("StyleBoxEmpty_jq2gp")
+theme_override_styles/hover_pressed = SubResource("StyleBoxEmpty_1equp")
+theme_override_styles/hover_pressed_mirrored = SubResource("StyleBoxEmpty_8qufa")
+theme_override_styles/disabled = SubResource("StyleBoxEmpty_hrygr")
+theme_override_styles/disabled_mirrored = SubResource("StyleBoxEmpty_3c8yq")
+theme_override_styles/focus = SubResource("StyleBoxEmpty_f1j2c")
 script = ExtResource("22_3c8yq")
 img_fondo_youwin = NodePath("../fondo_youwin")
 img_youwin = NodePath("../you_win")
@@ -978,7 +974,7 @@ personaje = NodePath("../../personaje")
 posicion_inicial_personaje = NodePath("../../inicio_personaje")
 luces = [NodePath("../../ascensor/luz_pb"), NodePath("../../ascensor/luz_p1"), NodePath("../../ascensor/luz_p2"), NodePath("../../ascensor/luz_p3"), NodePath("../../ascensor/luz_p4")]
 
-[node name="TextureRect" type="TextureRect" parent="UI/play_again"]
+[node name="TextureRect" type="TextureRect" parent="UI/play_again" unique_id=1410878013]
 layout_mode = 0
 offset_left = -0.367309
 offset_top = 0.333394
@@ -987,7 +983,7 @@ offset_bottom = 774.333
 scale = Vector2(0.0039807, 0.0155841)
 texture = ExtResource("22_f1j2c")
 
-[node name="inicio_personaje" type="Marker2D" parent="."]
+[node name="inicio_personaje" type="Marker2D" parent="." unique_id=1607548301]
 position = Vector2(488, 580)
 
 [connection signal="body_entered" from="caldera1/Area2D" to="caldera1/Area2D" method="_on_body_entered"]

@@ -73,8 +73,8 @@ func detener_caldera() -> void:
 			p.stop()
 			
 func reproducir_gota() -> void:
-	if caldera.has_method("set_loop"):
-		caldera.set_loop(true)
+	if gota.has_method("set_loop"):
+		gota.set_loop(true)
 	_play_fx(gota, 0)
 
 func detener_gota() -> void:
