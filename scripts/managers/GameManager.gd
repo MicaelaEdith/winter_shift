@@ -9,6 +9,8 @@ var paused := false
 var player_zone: String = ""
 var broken_boiler: String = ""
 var leaking_techo: String = ""
+var broken_electrico: String = ""
+var broken_viento: String = ""
 var drain_active := true
 
 var img_pausa: ColorRect

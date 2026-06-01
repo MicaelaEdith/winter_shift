@@ -40,7 +40,7 @@ size = Vector2(38.9527, 48.3484)
 size = Vector2(31.2328, 39.978)
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_68mvh"]
-size = Vector2(55.6637, 53.7886)
+size = Vector2(55.470093, 55.50876)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_ymkly"]
 atlas = ExtResource("4_ueiap")
@@ -416,6 +416,16 @@ offset_bottom = 869.0
 scale = Vector2(0.200954, 0.16693)
 texture = ExtResource("8_jq2gp")
 
+[node name="Area2D" type="Area2D" parent="desperfecto_electrico2" unique_id=1579575593 node_paths=PackedStringArray("barra")]
+position = Vector2(228.9081, 299.52673)
+scale = Vector2(5.0813274, 6.8931723)
+script = ExtResource("4_lyxkq")
+elemento = "desperfecto_electrico2"
+barra = NodePath("../../caldera1/barra_azul")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="desperfecto_electrico2/Area2D" unique_id=2115627139]
+shape = SubResource("RectangleShape2D_68mvh")
+
 [node name="desperfecto_electrico1" type="TextureRect" parent="." unique_id=951017041]
 visible = false
 offset_left = 340.0
@@ -425,14 +435,36 @@ offset_bottom = 722.0
 scale = Vector2(0.19183, 0.182581)
 texture = ExtResource("8_jq2gp")
 
+[node name="Area2D" type="Area2D" parent="desperfecto_electrico1" unique_id=2032064316 node_paths=PackedStringArray("barra")]
+position = Vector2(250.22156, 306.7132)
+scale = Vector2(7.209118, 8.451224)
+script = ExtResource("4_lyxkq")
+elemento = "desperfecto_electrico1"
+barra = NodePath("../../caldera1/barra_azul")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="desperfecto_electrico1/Area2D" unique_id=474720861]
+shape = SubResource("RectangleShape2D_68mvh")
+
 [node name="viento_1" type="TextureRect" parent="." unique_id=1138901459]
 visible = false
-offset_left = 683.0
-offset_top = 144.0
-offset_right = 1134.0
-offset_bottom = 584.0
+offset_left = 685.0
+offset_top = 155.0
+offset_right = 1136.0
+offset_bottom = 595.0
 scale = Vector2(0.1573, 0.227389)
 texture = ExtResource("8_1equp")
+
+[node name="Area2D" type="Area2D" parent="viento_1" unique_id=201092210 node_paths=PackedStringArray("barra")]
+position = Vector2(178.00381, 233.08075)
+scale = Vector2(5.04271, -6.608662)
+script = ExtResource("4_lyxkq")
+elemento = "viento_1"
+barra = NodePath("../../caldera1/barra_azul")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="viento_1/Area2D" unique_id=199439766]
+position = Vector2(6.3033447, -0.8600769)
+shape = SubResource("RectangleShape2D_68mvh")
+debug_color = Color(0, 0.6, 0.69803923, 0.42352942)
 
 [node name="viento_2" type="TextureRect" parent="." unique_id=426915601]
 visible = false
@@ -442,6 +474,16 @@ offset_right = 847.0
 offset_bottom = 843.0
 scale = Vector2(0.169136, 0.201097)
 texture = ExtResource("6_yqr1d")
+
+[node name="Area2D" type="Area2D" parent="viento_2" unique_id=583283133 node_paths=PackedStringArray("barra")]
+position = Vector2(189.19687, 268.5271)
+scale = Vector2(7.1922603, 9.332388)
+script = ExtResource("4_lyxkq")
+elemento = "viento_2"
+barra = NodePath("../../caldera1/barra_azul")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="viento_2/Area2D" unique_id=297745402]
+shape = SubResource("RectangleShape2D_68mvh")
 
 [node name="caldera1" type="TextureRect" parent="." unique_id=1371002758]
 offset_left = 366.0
@@ -986,6 +1028,14 @@ texture = ExtResource("22_f1j2c")
 [node name="inicio_personaje" type="Marker2D" parent="." unique_id=1607548301]
 position = Vector2(488, 580)
 
+[connection signal="body_entered" from="desperfecto_electrico2/Area2D" to="desperfecto_electrico2/Area2D" method="_on_body_entered"]
+[connection signal="body_exited" from="desperfecto_electrico2/Area2D" to="desperfecto_electrico2/Area2D" method="_on_body_exited"]
+[connection signal="body_entered" from="desperfecto_electrico1/Area2D" to="desperfecto_electrico1/Area2D" method="_on_body_entered"]
+[connection signal="body_exited" from="desperfecto_electrico1/Area2D" to="desperfecto_electrico1/Area2D" method="_on_body_exited"]
+[connection signal="body_entered" from="viento_1/Area2D" to="viento_1/Area2D" method="_on_body_entered"]
+[connection signal="body_exited" from="viento_1/Area2D" to="viento_1/Area2D" method="_on_body_exited"]
+[connection signal="body_entered" from="viento_2/Area2D" to="viento_2/Area2D" method="_on_body_entered"]
+[connection signal="body_exited" from="viento_2/Area2D" to="viento_2/Area2D" method="_on_body_exited"]
 [connection signal="body_entered" from="caldera1/Area2D" to="caldera1/Area2D" method="_on_body_entered"]
 [connection signal="body_exited" from="caldera1/Area2D" to="caldera1/Area2D" method="_on_body_exited"]
 [connection signal="body_entered" from="caldera2/Area2D" to="caldera2/Area2D" method="_on_body_entered"]

@@ -24,6 +24,8 @@ func reiniciar_globales():
 	GameManager.player_zone = ""
 	GameManager.broken_boiler = ""
 	GameManager.leaking_techo = ""
+	GameManager.broken_electrico = ""
+	GameManager.broken_viento = ""
 	GameManager.drain_active = true
 	GameManager.game_over = false
 	GameManager.won = false
@@ -48,7 +50,7 @@ func reiniciar_globales():
 	luces[4].visible = false
 
 	GameManager._days_with_boiler_break = []
-	EnemiesManager._goteras_activadas = []
+	EnemiesManager._dias_activados = []
 
 	GameManager.toggle_pause()
 

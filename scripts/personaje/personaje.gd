@@ -17,7 +17,7 @@ extends CharacterBody2D
 
 var esta_en_ascensor := false
 var sumando := false
-var _reparando_techo_activo := false
+var _reparando_activo := false
 
 
 func _ready() -> void:
@@ -42,16 +42,28 @@ func _physics_process(delta):
 
 	var en_zona_techo := GameManager.player_zone in ["techo_1", "techo_2"]
 	var en_zona_caldera := GameManager.player_zone in ["caldera1", "caldera2"]
+	var en_zona_electrico := GameManager.player_zone in ["desperfecto_electrico1", "desperfecto_electrico2"]
+	var en_zona_viento := GameManager.player_zone in ["viento_1", "viento_2"]
+	var en_zona_reparable := en_zona_techo or en_zona_electrico or en_zona_viento
 
-	if en_zona_techo and not _reparando_techo_activo:
+	var zona_reparable_rota := (
+		(GameManager.player_zone == GameManager.leaking_techo) or
+		(GameManager.player_zone == GameManager.broken_electrico) or
+		(GameManager.player_zone == GameManager.broken_viento)
+	)
+
+	var anim_reparar := "reparando_techo"
+	if en_zona_viento:
+		anim_reparar = "reparando"
+
+	if en_zona_reparable and not _reparando_activo and zona_reparable_rota:
 		if Input.is_action_just_pressed("ui_accept"):
-			if GameManager.player_zone == GameManager.leaking_techo:
-				_reparando_techo_activo = true
-				$ColorRect/AnimatedSprite2D.play("reparando_techo")
-				anim_override = true
-				reparar_techo()
+			_reparando_activo = true
+			$ColorRect/AnimatedSprite2D.play(anim_reparar)
+			anim_override = true
+			reparar_problema()
 
-	if not _reparando_techo_activo and en_zona_caldera and Input.is_action_pressed("ui_accept"):
+	if not _reparando_activo and en_zona_caldera and Input.is_action_pressed("ui_accept"):
 		if GameManager.player_zone == GameManager.broken_boiler:
 			$ColorRect/AnimatedSprite2D.play("reparando")
 			anim_override = true
@@ -63,9 +75,9 @@ func _physics_process(delta):
 			elif GameManager.player_zone == "caldera2":
 				caldera2.barra.cargar = true
 
-	if _reparando_techo_activo:
-		if not en_zona_techo:
-			_reparando_techo_activo = false
+	if _reparando_activo:
+		if not en_zona_reparable:
+			_reparando_activo = false
 		else:
 			anim_override = true
 
@@ -159,18 +171,36 @@ func actualizar_luz():
 		luz_p4.visible = true
 
 
-func reparar_techo():
+func reparar_problema():
 	var target_zone = GameManager.player_zone
 	await get_tree().create_timer(3).timeout
 
-	if not _reparando_techo_activo:
+	if not _reparando_activo:
 		return
 
-	if target_zone == "techo_1":
-		EnemiesManager.gotera_1.visible = false
-	elif target_zone == "techo_2":
-		EnemiesManager.gotera_2.visible = false
+	_completar_reparacion(target_zone)
+	_reparando_activo = false
+
+
+func _completar_reparacion(zona: String) -> void:
+	match zona:
+		"techo_1":
+			EnemiesManager.gotera_1.visible = false
+			GameManager.leaking_techo = ""
+		"techo_2":
+			EnemiesManager.gotera_2.visible = false
+			GameManager.leaking_techo = ""
+		"desperfecto_electrico1":
+			EnemiesManager.desperfecto_electrico_1.visible = false
+			GameManager.broken_electrico = ""
+		"desperfecto_electrico2":
+			EnemiesManager.desperfecto_electrico_2.visible = false
+			GameManager.broken_electrico = ""
+		"viento_1":
+			EnemiesManager.viento_1.visible = false
+			GameManager.broken_viento = ""
+		"viento_2":
+			EnemiesManager.viento_2.visible = false
+			GameManager.broken_viento = ""
 
 	SoundManager.detener_gota()
-	GameManager.leaking_techo = ""
-	_reparando_techo_activo = false
