@@ -97,3 +97,7 @@ func boton_musica():
 
 func boton_efectos():
 	estado_fx = not estado_fx
+	if not estado_fx:
+		for p in players_fx:
+			if p.playing:
+				p.stop()

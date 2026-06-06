@@ -41,32 +41,38 @@ func _process(delta: float) -> void:
 
 func _activar_goteras(dia: int) -> void:
 	if dia in [90, 68, 44, 21, 5]:
-		gotera_2.visible = true
-		GameManager.leaking_techo = "techo_2"
-		SoundManager.reproducir_gota()
+		if not gotera_2.visible:
+			gotera_2.visible = true
+			GameManager.leaking_techo = "techo_2"
+			SoundManager.reproducir_gota()
 	elif dia in [88, 79, 51, 36, 11]:
-		gotera_1.visible = true
-		GameManager.leaking_techo = "techo_1"
-		SoundManager.reproducir_gota()
+		if not gotera_1.visible:
+			gotera_1.visible = true
+			GameManager.leaking_techo = "techo_1"
+			SoundManager.reproducir_gota()
 
 
 func _activar_electrico(dia: int) -> void:
 	if dia in [86, 66, 46, 26, 6]:
-		desperfecto_electrico_2.visible = true
-		GameManager.broken_electrico = "desperfecto_electrico2"
-		SoundManager.reproducir_gota()
+		if not desperfecto_electrico_2.visible:
+			desperfecto_electrico_2.visible = true
+			GameManager.broken_electrico = "desperfecto_electrico2"
+			SoundManager.reproducir_gota()
 	elif dia in [76, 56, 38, 19, 2]:
-		desperfecto_electrico_1.visible = true
-		GameManager.broken_electrico = "desperfecto_electrico1"
-		SoundManager.reproducir_gota()
+		if not desperfecto_electrico_1.visible:
+			desperfecto_electrico_1.visible = true
+			GameManager.broken_electrico = "desperfecto_electrico1"
+			SoundManager.reproducir_gota()
 
 
 func _activar_viento(dia: int) -> void:
 	if dia in [83, 62, 42, 22, 10]:
-		viento_2.visible = true
-		GameManager.broken_viento = "viento_2"
-		SoundManager.reproducir_gota()
+		if not viento_2.visible:
+			viento_2.visible = true
+			GameManager.broken_viento = "viento_2"
+			SoundManager.reproducir_gota()
 	elif dia in [73, 53, 33, 14]:
-		viento_1.visible = true
-		GameManager.broken_viento = "viento_1"
-		SoundManager.reproducir_gota()
+		if not viento_1.visible:
+			viento_1.visible = true
+			GameManager.broken_viento = "viento_1"
+			SoundManager.reproducir_gota()

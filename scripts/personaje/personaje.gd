@@ -28,17 +28,18 @@ func _physics_process(delta):
 	var direccion := 0
 	var anim_override := false
 
-	if Input.is_action_pressed("ui_left"):
-		$ColorRect/AnimatedSprite2D.play("correr")
-		$ColorRect/AnimatedSprite2D.flip_h = true
-		direccion -= 1
-		anim_override = true
+	if not _reparando_activo:
+		if Input.is_action_pressed("ui_left"):
+			$ColorRect/AnimatedSprite2D.play("correr")
+			$ColorRect/AnimatedSprite2D.flip_h = true
+			direccion -= 1
+			anim_override = true
 
-	if Input.is_action_pressed("ui_right"):
-		$ColorRect/AnimatedSprite2D.flip_h = false
-		$ColorRect/AnimatedSprite2D.play("correr")
-		direccion += 1
-		anim_override = true
+		if Input.is_action_pressed("ui_right"):
+			$ColorRect/AnimatedSprite2D.flip_h = false
+			$ColorRect/AnimatedSprite2D.play("correr")
+			direccion += 1
+			anim_override = true
 
 	var en_zona_techo := GameManager.player_zone in ["techo_1", "techo_2"]
 	var en_zona_caldera := GameManager.player_zone in ["caldera1", "caldera2"]
