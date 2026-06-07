@@ -5,6 +5,10 @@ var ding : AudioStream = preload("res://assets/audio/ding.mp3")
 var musica : AudioStream = preload("res://assets/audio/musica.mp3")
 var caldera : AudioStream = preload("res://assets/audio/caldera.mp3")
 var gota : AudioStream = preload("res://assets/audio/gota.mp3")
+var viento : AudioStream = preload("res://assets/audio/viento.mp3")
+var desperfecto_electrico : AudioStream = preload("res://assets/audio/desperfecto_electrico.mp3")
+var gana : AudioStream = preload("res://assets/audio/gana.mp3")
+var pierde : AudioStream = preload("res://assets/audio/pierde.mp3")
 
 var player_musica : AudioStreamPlayer
 
@@ -82,6 +86,34 @@ func detener_gota() -> void:
 		if p.stream == gota and p.playing:
 			p.stop()
 
+
+func reproducir_viento() -> void:
+	if viento.has_method("set_loop"):
+		viento.set_loop(true)
+	_play_fx(viento, 0)
+
+func detener_viento() -> void:
+	for p in players_fx:
+		if p.stream == viento and p.playing:
+			p.stop()
+
+
+func reproducir_electrico() -> void:
+	if desperfecto_electrico.has_method("set_loop"):
+		desperfecto_electrico.set_loop(true)
+	_play_fx(desperfecto_electrico, 0)
+
+func detener_electrico() -> void:
+	for p in players_fx:
+		if p.stream == desperfecto_electrico and p.playing:
+			p.stop()
+
+
+func reproducir_gana() -> void:
+	_play_fx(gana, 0)
+
+func reproducir_pierde() -> void:
+	_play_fx(pierde, 0)
 
 
 func reproducir_ding() -> void:

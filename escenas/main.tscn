@@ -258,7 +258,7 @@ size = Vector2(37.0982, 39.9842)
 [sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_ltvhs"]
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_s7y03"]
-bg_color = Color(0.6, 0.6, 0.6, 0.32549)
+bg_color = Color(0.6, 0.6, 0.6, 0.18431373)
 corner_radius_top_left = 60
 corner_radius_top_right = 60
 corner_radius_bottom_right = 60
@@ -455,7 +455,7 @@ scale = Vector2(0.1573, 0.227389)
 texture = ExtResource("8_1equp")
 
 [node name="Area2D" type="Area2D" parent="viento_1" unique_id=201092210 node_paths=PackedStringArray("barra")]
-position = Vector2(178.00381, 233.08075)
+position = Vector2(324.22125, 241.87625)
 scale = Vector2(5.04271, -6.608662)
 script = ExtResource("4_lyxkq")
 elemento = "viento_1"
@@ -476,8 +476,8 @@ scale = Vector2(0.169136, 0.201097)
 texture = ExtResource("6_yqr1d")
 
 [node name="Area2D" type="Area2D" parent="viento_2" unique_id=583283133 node_paths=PackedStringArray("barra")]
-position = Vector2(189.19687, 268.5271)
-scale = Vector2(7.1922603, 9.332388)
+position = Vector2(29.562008, 283.44528)
+scale = Vector2(4.8272996, 9.332388)
 script = ExtResource("4_lyxkq")
 elemento = "viento_2"
 barra = NodePath("../../caldera1/barra_azul")
@@ -842,6 +842,12 @@ offset_right = 1164.0
 offset_bottom = 710.0
 color = Color(0.0169952, 0.0332499, 0.0653198, 0.960784)
 
+[node name="cold_overlay" type="ColorRect" parent="." unique_id=61626364]
+offset_right = 1164.0
+offset_bottom = 710.0
+mouse_filter = 2
+color = Color(0.3, 0.5, 0.9, 0)
+
 [node name="UI" type="CanvasLayer" parent="." unique_id=2094452829]
 
 [node name="botones" type="CanvasGroup" parent="UI" unique_id=742908875]
@@ -993,7 +999,7 @@ offset_left = 467.0
 offset_top = 523.0
 offset_right = 475.0
 offset_bottom = 531.0
-scale = Vector2(23.9276, 5.54119)
+scale = Vector2(23.9276, 8.8659315)
 theme_override_styles/normal = SubResource("StyleBoxEmpty_yqr1d")
 theme_override_styles/normal_mirrored = SubResource("StyleBoxEmpty_c2nrx")
 theme_override_styles/pressed = SubResource("StyleBoxEmpty_v4ejg")
@@ -1018,11 +1024,11 @@ luces = [NodePath("../../ascensor/luz_pb"), NodePath("../../ascensor/luz_p1"), N
 
 [node name="TextureRect" type="TextureRect" parent="UI/play_again" unique_id=1410878013]
 layout_mode = 0
-offset_left = -0.367309
-offset_top = 0.333394
-offset_right = 1955.63
-offset_bottom = 774.333
-scale = Vector2(0.0039807, 0.0155841)
+offset_left = -0.36730957
+offset_top = 0.20837402
+offset_right = 1955.6327
+offset_bottom = 774.2084
+scale = Vector2(0.0039807, 0.011717048)
 texture = ExtResource("22_f1j2c")
 
 [node name="inicio_personaje" type="Marker2D" parent="." unique_id=1607548301]

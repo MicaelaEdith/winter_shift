@@ -188,20 +188,24 @@ func _completar_reparacion(zona: String) -> void:
 		"techo_1":
 			EnemiesManager.gotera_1.visible = false
 			GameManager.leaking_techo = ""
+			SoundManager.detener_gota()
 		"techo_2":
 			EnemiesManager.gotera_2.visible = false
 			GameManager.leaking_techo = ""
+			SoundManager.detener_gota()
 		"desperfecto_electrico1":
 			EnemiesManager.desperfecto_electrico_1.visible = false
 			GameManager.broken_electrico = ""
+			SoundManager.detener_electrico()
 		"desperfecto_electrico2":
 			EnemiesManager.desperfecto_electrico_2.visible = false
 			GameManager.broken_electrico = ""
+			SoundManager.detener_electrico()
 		"viento_1":
 			EnemiesManager.viento_1.visible = false
 			GameManager.broken_viento = ""
+			SoundManager.detener_viento()
 		"viento_2":
 			EnemiesManager.viento_2.visible = false
 			GameManager.broken_viento = ""
-
-	SoundManager.detener_gota()
+			SoundManager.detener_viento()

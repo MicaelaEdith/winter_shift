@@ -57,12 +57,12 @@ func _activar_electrico(dia: int) -> void:
 		if not desperfecto_electrico_2.visible:
 			desperfecto_electrico_2.visible = true
 			GameManager.broken_electrico = "desperfecto_electrico2"
-			SoundManager.reproducir_gota()
+			SoundManager.reproducir_electrico()
 	elif dia in [76, 56, 38, 19, 2]:
 		if not desperfecto_electrico_1.visible:
 			desperfecto_electrico_1.visible = true
 			GameManager.broken_electrico = "desperfecto_electrico1"
-			SoundManager.reproducir_gota()
+			SoundManager.reproducir_electrico()
 
 
 func _activar_viento(dia: int) -> void:
@@ -70,9 +70,9 @@ func _activar_viento(dia: int) -> void:
 		if not viento_2.visible:
 			viento_2.visible = true
 			GameManager.broken_viento = "viento_2"
-			SoundManager.reproducir_gota()
+			SoundManager.reproducir_viento()
 	elif dia in [73, 53, 33, 14]:
 		if not viento_1.visible:
 			viento_1.visible = true
 			GameManager.broken_viento = "viento_1"
-			SoundManager.reproducir_gota()
+			SoundManager.reproducir_viento()

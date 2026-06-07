@@ -5,6 +5,8 @@ var day := 92
 var game_over := false
 var won := false
 var paused := false
+var cold_level := 0.0
+var max_cold := 100.0
 
 var player_zone: String = ""
 var broken_boiler: String = ""
@@ -32,7 +34,10 @@ func _process(delta: float) -> void:
 
 	if _boiler_break_days.has(day) and not _days_with_boiler_break.has(day):
 		if broken_boiler != "":
-			game_over = true
+			cold_level += 30.0
+			_days_with_boiler_break.append(day)
+			if cold_level >= max_cold:
+				game_over = true
 		else:
 			_break_boiler()
 
@@ -43,6 +48,26 @@ func _break_boiler() -> void:
 	_days_with_boiler_break.append(day)
 	drain_active = true
 	SoundManager.reproducir_caldera()
+
+
+func accumulate_cold() -> void:
+	if game_over:
+		return
+	var problems := 0
+	if leaking_techo != "":
+		problems += 1
+	if broken_electrico != "":
+		problems += 1
+	if broken_viento != "":
+		problems += 1
+	cold_level += problems * 5.0
+	if broken_boiler != "":
+		if drain_active:
+			cold_level += 3.0
+		else:
+			cold_level += 15.0
+	if cold_level >= max_cold:
+		game_over = true
 
 
 func _buscar_img_pausa():

@@ -29,6 +29,7 @@ func reiniciar_globales():
 	GameManager.drain_active = true
 	GameManager.game_over = false
 	GameManager.won = false
+	GameManager.cold_level = 0.0
 
 	if GameManager.img_caldera1:
 		GameManager.img_caldera1.visible = true
@@ -51,6 +52,9 @@ func reiniciar_globales():
 
 	GameManager._days_with_boiler_break = []
 	EnemiesManager._dias_activados = []
+	contador._game_over_mostrado = false
+	if contador.cold_overlay:
+		contador.cold_overlay.color = Color(0.3, 0.5, 0.9, 0.0)
 
 	GameManager.toggle_pause()
 

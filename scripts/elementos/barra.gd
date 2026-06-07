@@ -37,6 +37,9 @@ func _process(delta: float) -> void:
 
 		if time_left <= 0:
 			GameManager.drain_active = false
+			GameManager.cold_level += 20.0
+			if GameManager.cold_level >= GameManager.max_cold:
+				GameManager.game_over = true
 
 	if cargar:
 		if Input.is_action_pressed("ui_accept"):
